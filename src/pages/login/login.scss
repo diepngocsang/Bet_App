@@ -12,19 +12,54 @@ page-login {
         .mask {
             background: #000000;
             opacity: 0.7;
-            height: 60vh;
+            height: 70vh;
             position: relative;
             top: 35px;
             left: 0;
             border-radius: 10px;
         }
+        .logo-log {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            img {
+                height: 30vw;
+            }
+        }
         .login-form {
             position: absolute;
-            top: 20px;
+            top: 20vh;
             left: 0;
             width: 100%;
             h1 {
                 font-size: 9vw;
+            }
+            .form {
+                padding: 0 10vw 5vw;
+                .usr-icon {
+                    font-size: 11vw;
+                    color: white;
+                }
+                .list-ios>.item-block:first-child {
+                    border-top: 0;
+                    background: none;
+                    color: white;
+                    padding-left: 0;
+                    .item-inner {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+                .list-ios>.item-block:last-child {
+                    border-bottom: 0;
+                    background: none;
+                    color: white;
+                    padding-left: 0;
+                    .item-inner {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
             }
         }
     }
