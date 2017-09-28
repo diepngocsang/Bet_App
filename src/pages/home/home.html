@@ -23,8 +23,11 @@
             <span>Nou Camp</span>
         </div>
     </div>
+    <!-- <div *ngFor="let item of items">
+        <span style="color: white;">{{item.name}}</span>
+    </div> -->
 
-    <div class="button-bet">
+    <div class="button-bet" (click)="goToLogin()">
         <div><img src="./assets/images/icons/chips.png" alt=""></div>
         <div class="text-bet">BET NOW</div>
     </div>

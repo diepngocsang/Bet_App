@@ -1,0 +1,31 @@
+page-login {
+    .toolbar-background {
+        background-color: transparent;
+        border: none;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+        border-width: 0;
+    }
+    .login-content {
+        background: url('../assets/images/bg/login-bg.jpg') no-repeat;
+        background-size: cover;
+        .mask {
+            background: #000000;
+            opacity: 0.7;
+            height: 60vh;
+            position: relative;
+            top: 35px;
+            left: 0;
+            border-radius: 10px;
+        }
+        .login-form {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            h1 {
+                font-size: 9vw;
+            }
+        }
+    }
+}
