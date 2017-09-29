@@ -38,6 +38,9 @@ page-login {
             }
             .form {
                 padding: 0 10vw 5vw;
+                .list-form {
+                    margin-bottom: 4.5vh !important;
+                }
                 .usr-icon {
                     font-size: 11vw;
                     color: white;
@@ -46,7 +49,7 @@ page-login {
                     border-top: 0;
                     background: none;
                     color: white;
-                    padding-left: 0;
+                    padding: 3vw 0;
                     .item-inner {
                         border-bottom: 1px solid #fff;
                     }
@@ -55,9 +58,29 @@ page-login {
                     border-bottom: 0;
                     background: none;
                     color: white;
-                    padding-left: 0;
+                    padding: 2vw 0;
                     .item-inner {
                         border-bottom: 1px solid #fff;
+                    }
+                }
+                .btn-log {
+                    width: 100%;
+                    text-align: center;
+                    button {
+                        width: 45vw;
+                    }
+                }
+                .register-side {
+                    padding-top: 4vw;
+                    p:first-child {
+                        color: white;
+                        text-align: center;
+                    }
+                    p:last-child {
+                        color: sandybrown;
+                        text-align: center;
+                        font-size: 6vw;
+                        margin: 0;
                     }
                 }
             }
