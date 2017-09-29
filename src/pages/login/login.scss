@@ -1,0 +1,89 @@
+page-login {
+    .toolbar-background {
+        background-color: transparent;
+        border: none;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+        border-width: 0;
+    }
+    .login-content {
+        background: url('../assets/images/bg/login-bg.jpg') no-repeat;
+        background-size: cover;
+        .mask {
+            background: #000000;
+            opacity: 0.7;
+            height: 70vh;
+            position: relative;
+            top: 35px;
+            left: 0;
+            border-radius: 10px;
+        }
+        .logo-log {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            img {
+                height: 30vw;
+            }
+        }
+        .login-form {
+            position: absolute;
+            top: 20vh;
+            left: 0;
+            width: 100%;
+            h1 {
+                font-size: 9vw;
+            }
+            .form {
+                padding: 0 10vw 5vw;
+                .list-form {
+                    margin-bottom: 4.5vh !important;
+                }
+                .usr-icon {
+                    font-size: 11vw;
+                    color: white;
+                }
+                .list-ios>.item-block:first-child {
+                    border-top: 0;
+                    background: none;
+                    color: white;
+                    padding: 3vw 0;
+                    .item-inner {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+                .list-ios>.item-block:last-child {
+                    border-bottom: 0;
+                    background: none;
+                    color: white;
+                    padding: 2vw 0;
+                    .item-inner {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+                .btn-log {
+                    width: 100%;
+                    text-align: center;
+                    button {
+                        width: 45vw;
+                    }
+                }
+                .register-side {
+                    padding-top: 4vw;
+                    p:first-child {
+                        color: white;
+                        text-align: center;
+                    }
+                    p:last-child {
+                        color: sandybrown;
+                        text-align: center;
+                        font-size: 5vw;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
