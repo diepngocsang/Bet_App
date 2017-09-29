@@ -25199,11 +25199,11 @@ ion-navbar.toolbar {
   }
 }
 
-page-home .toolbar-background {
+.toolbar-background {
   background-color: transparent;
 }
 
-page-home .toolbar-title {
+.toolbar-title {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25215,16 +25215,16 @@ page-home .toolbar-title {
   height: 4vh;
 }
 
-page-home .toolbar-title img {
+.toolbar-title img {
   width: 35vw;
 }
 
-page-home .home-content {
+.home-content {
   background: url("../assets/images/bg/bg-main3.jpg") no-repeat;
   background-size: cover;
 }
 
-page-home .home-content .list-match .team {
+.home-content .list-match .team {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25236,28 +25236,28 @@ page-home .home-content .list-match .team {
   padding: 20px 10px;
 }
 
-page-home .home-content .list-match .team .vs {
+.home-content .list-match .team .vs {
   color: wheat;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-page-home .home-content .list-match .team img {
+.home-content .list-match .team img {
   width: 120px;
   height: 70px;
 }
 
-page-home .home-content .list-match .short-inf {
+.home-content .list-match .short-inf {
   color: white;
   text-align: center;
 }
 
-page-home .home-content .list-match .short-inf span {
+.home-content .list-match .short-inf span {
   font-weight: bold;
 }
 
-page-home .home-content .button-bet {
+.home-content .button-bet {
   position: absolute;
   bottom: 6vh;
   left: 0;
@@ -25267,22 +25267,22 @@ page-home .home-content .button-bet {
   animation: heartbeat 1s infinite;
 }
 
-page-home .home-content .button-bet img {
+.home-content .button-bet img {
   width: 70px;
 }
 
-page-home .home-content .button-bet .text-bet {
+.home-content .button-bet .text-bet {
   color: white;
   font-size: 7vw;
   font-weight: bold;
 }
 
-page-home h1 {
+h1 {
   text-align: center;
   color: sandybrown;
 }
 
-page-home h5 {
+h5 {
   text-align: center;
   color: white;
 }
@@ -25339,4 +25339,111 @@ page-home h5 {
     -webkit-transform: scale(0.75);
     transform: scale(0.75);
   }
+}
+
+page-login .toolbar-background {
+  background-color: transparent;
+  border: none;
+}
+
+page-login .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+  border-width: 0;
+}
+
+page-login .login-content {
+  background: url("../assets/images/bg/login-bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+page-login .login-content .mask {
+  background: #000000;
+  opacity: 0.7;
+  height: 70vh;
+  position: relative;
+  top: 35px;
+  left: 0;
+  border-radius: 10px;
+}
+
+page-login .login-content .logo-log {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+
+page-login .login-content .logo-log img {
+  height: 30vw;
+}
+
+page-login .login-content .login-form {
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  width: 100%;
+}
+
+page-login .login-content .login-form h1 {
+  font-size: 9vw;
+}
+
+page-login .login-content .login-form .form {
+  padding: 0 10vw 5vw;
+}
+
+page-login .login-content .login-form .form .list-form {
+  margin-bottom: 4.5vh !important;
+}
+
+page-login .login-content .login-form .form .usr-icon {
+  font-size: 11vw;
+  color: white;
+}
+
+page-login .login-content .login-form .form .list-ios > .item-block:first-child {
+  border-top: 0;
+  background: none;
+  color: white;
+  padding: 3vw 0;
+}
+
+page-login .login-content .login-form .form .list-ios > .item-block:first-child .item-inner {
+  border-bottom: 1px solid #fff;
+}
+
+page-login .login-content .login-form .form .list-ios > .item-block:last-child {
+  border-bottom: 0;
+  background: none;
+  color: white;
+  padding: 2vw 0;
+}
+
+page-login .login-content .login-form .form .list-ios > .item-block:last-child .item-inner {
+  border-bottom: 1px solid #fff;
+}
+
+page-login .login-content .login-form .form .btn-log {
+  width: 100%;
+  text-align: center;
+}
+
+page-login .login-content .login-form .form .btn-log button {
+  width: 45vw;
+}
+
+page-login .login-content .login-form .form .register-side {
+  padding-top: 4vw;
+}
+
+page-login .login-content .login-form .form .register-side p:first-child {
+  color: white;
+  text-align: center;
+}
+
+page-login .login-content .login-form .form .register-side p:last-child {
+  color: sandybrown;
+  text-align: center;
+  font-size: 6vw;
+  margin: 0;
 }
