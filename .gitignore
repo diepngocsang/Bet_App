@@ -3,4 +3,5 @@ platforms/
 www/
 plugins/
 .sourcemaps/
+hooks/
 
