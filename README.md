@@ -15,7 +15,7 @@ Install package.
 $ npm install
 ```
 
-### Step 3:
+#### Step 3:
 Then, to run it, cd into `SmartBet` and run:
 
 ```bash
