@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -31,8 +32,9 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+        this.statusBar.styleLightContent();
+        this.splashScreen.hide();
+      
     });
   }
 

@@ -1,18 +1,35 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="head-title">
+            <img src="./assets/icon/title-img.png">
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content padding class="home-content">
+    <h1>Next Match</h1>
+    <h5>01/01/2018 - 19:30 P.M</h5>
+    <div class="list-match">
+        <div class="team">
+            <img src="./assets/images/int-flag/england.png" alt="">
+            <span class="vs">vs</span>
+            <img src="./assets/images/int-flag/france.png" alt="">
+        </div>
+        <div class="short-inf">
+            <span>Stadium: </span>
+            <span>Nou Camp</span>
+        </div>
+    </div>
+    <!-- <div *ngFor="let item of items">
+        <span style="color: white;">{{item.name}}</span>
+    </div> -->
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <div class="button-bet" (click)="goToLogin()">
+        <div><img src="./assets/images/icons/chips.png" alt=""></div>
+        <div class="text-bet">BET NOW</div>
+    </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
