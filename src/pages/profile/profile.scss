@@ -9,7 +9,9 @@ page-profile {
         color: #E0BB92;
     }
     .home-content {
-        background-color: #5D0F18;
+        // background-color: #5D0F18;
+        background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
+        background-size: cover;
         .ava-side {
             display: flex;
             justify-content: center;
@@ -34,10 +36,26 @@ page-profile {
             h3 {
                 color: #E0BB92;
             }
-            // .ava-name {
-            //     // border-bottom: 1px solid #E0BB92;
-            //     width: 70vw;
-            // }
+        }
+        .point-info {
+            padding-top: 7vw;
+            display: flex;
+            justify-content: space-between;
+            .total-bet {
+                border-left: 1px solid white;
+                padding: 0 4.5vw;
+                border-right: 1px solid white;
+            }
+            .title-p {
+                color: #E0BB92;
+                font-size: 4vw;
+            }
+            .number-p {
+                color: white;
+                font-size: 7vw;
+                padding-top: 2vw;
+                text-align: left;
+            }
         }
     }
 }
