@@ -1,86 +1,83 @@
-.toolbar-background {
-    background-color: transparent;
-}
-
-.toolbar-title {
-    display: flex;
-    justify-content: center;
-    height: 4vh;
-    img {
-        width: 35vw;
+page-home {
+    .toolbar-background {
+        background-color: transparent;
     }
-}
-
-.home-content {
-    background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
-    background-size: cover;
-    .list-match {
-        .team {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 10px;
-            .vs {
-                color: wheat;
-                align-self: center;
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: #E0BB92;
+        img {
+            width: 35vw;
+        }
+    }
+    .home-content {
+        background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
+        background-size: cover;
+        .list-match {
+            .team {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px 10px;
+                .vs {
+                    color: wheat;
+                    align-self: center;
+                }
+                img {
+                    width: 120px;
+                    height: 70px;
+                }
             }
-            img {
-                width: 120px;
-                height: 70px;
+            .short-inf {
+                color: white;
+                text-align: center;
+                span {
+                    font-weight: bold;
+                }
             }
         }
-        .short-inf {
-            color: white;
+        .button-bet {
+            position: absolute;
+            bottom: 6vh;
+            left: 0;
+            width: 100%;
             text-align: center;
-            span {
+            animation: heartbeat 1s infinite;
+            img {
+                width: 70px;
+            }
+            .text-bet {
+                color: white;
+                font-size: 7vw;
                 font-weight: bold;
             }
         }
     }
-    .button-bet {
-        position: absolute;
-        bottom: 6vh;
-        left: 0;
-        width: 100%;
+    h1 {
         text-align: center;
-        animation: heartbeat 1s infinite;
-        img {
-            width: 70px;
+        color: sandybrown;
+    }
+    h5 {
+        text-align: center;
+        color: white;
+    }
+    @keyframes heartbeat {
+        0% {
+            transform: scale( .75);
         }
-        .text-bet {
-            color: white;
-            font-size: 7vw;
-            font-weight: bold;
+        20% {
+            transform: scale( 1);
         }
-    }
-}
-
-h1 {
-    text-align: center;
-    color: sandybrown;
-}
-
-h5 {
-    text-align: center;
-    color: white;
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale( .75);
-    }
-    20% {
-        transform: scale( 1);
-    }
-    40% {
-        transform: scale( .75);
-    }
-    60% {
-        transform: scale( 1);
-    }
-    80% {
-        transform: scale( .75);
-    }
-    100% {
-        transform: scale( .75);
+        40% {
+            transform: scale( .75);
+        }
+        60% {
+            transform: scale( 1);
+        }
+        80% {
+            transform: scale( .75);
+        }
+        100% {
+            transform: scale( .75);
+        }
     }
 }

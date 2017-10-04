@@ -1,0 +1,98 @@
+// #E0BB92
+page-profile {
+    .toolbar-background {
+        background-color: transparent;
+    }
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: #E0BB92;
+    }
+    .home-content {
+        // background-color: #5D0F18;
+        background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
+        background-size: cover;
+        .ava-side {
+            display: flex;
+            justify-content: center;
+            .avatar {
+                border: 3px solid white;
+                width: 150px;
+                height: 150px;
+                display: flex;
+                align-items: flex-end;
+                background: #E0BB92;
+                border-radius: 10px;
+                img {
+                    width: 150px;
+                    height: 140px;
+                }
+            }
+        }
+        .full-name {
+            padding-top: 5vw;
+            display: flex;
+            justify-content: center;
+            h3 {
+                text-transform: capitalize;
+                color: #E0BB92;
+            }
+        }
+        .point-info {
+            padding-top: 7vw;
+            display: flex;
+            justify-content: space-between;
+            .total-bet {
+                border-left: 1px solid white;
+                padding: 0 4.5vw;
+                border-right: 1px solid white;
+            }
+            .win-ratio {
+                width: 23vw;
+            }
+            .text-center {
+                text-align: center !important;
+            }
+            .title-p {
+                color: #E0BB92;
+                font-size: 4vw;
+            }
+            .number-p {
+                color: white;
+                font-size: 7vw;
+                padding-top: 2vw;
+                text-align: left;
+            }
+        }
+        .mask {
+            background: #E0BB92;
+            opacity: 0.7;
+            height: 35vh;
+            position: relative;
+            top: 45px;
+            left: 0;
+            border-radius: 10px;
+        }
+        .details-side {
+            position: absolute;
+            bottom: 6vh;
+            left: 0;
+            width: 100%;
+            color: black;
+            padding: 0 10vw;
+            .detail-info {
+                display: flex;
+                justify-content: space-between;
+                .right {
+                    text-align: right;
+                    .upper-name {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            h5 {
+                text-align: center;
+            }
+        }
+    }
+}
