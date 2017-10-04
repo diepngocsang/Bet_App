@@ -1,0 +1,43 @@
+// #E0BB92
+page-profile {
+    .toolbar-background {
+        background-color: transparent;
+    }
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: #E0BB92;
+    }
+    .home-content {
+        background-color: #5D0F18;
+        .ava-side {
+            display: flex;
+            justify-content: center;
+            .avatar {
+                border: 3px solid white;
+                width: 150px;
+                height: 150px;
+                display: flex;
+                align-items: flex-end;
+                background: #E0BB92;
+                border-radius: 10px;
+                img {
+                    width: 150px;
+                    height: 140px;
+                }
+            }
+        }
+        .full-name {
+            padding-top: 5vw;
+            display: flex;
+            justify-content: center;
+            h3 {
+                color: #E0BB92;
+            }
+            // .ava-name {
+            //     // border-bottom: 1px solid #E0BB92;
+            //     width: 70vw;
+            // }
+        }
+    }
+}
