@@ -16,7 +16,19 @@ $ npm install
 ```
 
 #### Step 3:
-Then, to run it, cd into `SmartBet` and run:
+Run meteor client bundle
+```bash
+$ npm run meteor-client
+```
+
+#### Step 4:
+Start server
+```bash
+$ npm run start-server
+```
+
+#### Step 5:
+Open new cmd and run ionic serve to view the client app
 
 ```bash
 $ ionic cordova platform add ios

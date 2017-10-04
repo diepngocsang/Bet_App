@@ -1,56 +1,68 @@
 {
-    "name": "SmartBet",
-    "version": "0.0.1",
-    "author": "Ionic Framework",
-    "homepage": "http://ionicframework.com/",
-    "private": true,
-    "scripts": {
-        "clean": "ionic-app-scripts clean",
-        "build": "ionic-app-scripts build",
-        "lint": "ionic-app-scripts lint",
-        "ionic:build": "ionic-app-scripts build",
-        "ionic:serve": "ionic-app-scripts serve"
+  "name": "SmartBet",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve",
+    "meteor-client": "meteor-client bundle -s api",
+    "start-server":"cd api && meteor run"
+  },
+  "dependencies": {
+    "@angular/common": "4.4.3",
+    "@angular/compiler": "4.4.3",
+    "@angular/compiler-cli": "4.4.3",
+    "@angular/core": "4.4.3",
+    "@angular/forms": "4.4.3",
+    "@angular/http": "4.4.3",
+    "@angular/platform-browser": "4.4.3",
+    "@angular/platform-browser-dynamic": "4.4.3",
+    "@ionic-native/core": "3.12.1",
+    "@ionic-native/splash-screen": "3.12.1",
+    "@ionic-native/status-bar": "3.12.1",
+    "@ionic/storage": "2.0.1",
+    "cordova-ios": "^4.4.0",
+    "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-splashscreen": "^4.0.3",
+    "cordova-plugin-statusbar": "^2.2.2",
+    "cordova-plugin-whitelist": "^1.3.1",
+    "ionic-angular": "3.7.1",
+    "ionic-plugin-keyboard": "^2.2.1",
+    "ionicons": "3.0.0",
+    "meteor-rxjs": "^0.4.8",
+    "rxjs": "5.4.3",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.0.0",
+    "@types/meteor": "^1.4.8",
+    "@types/underscore": "^1.8.3",
+    "babel-runtime": "^6.26.0",
+    "meteor-typings": "^1.4.1",
+    "tmp": "0.0.33",
+    "typescript": "2.3.4",
+    "typescript-extends": "^1.0.1"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "ionic-plugin-keyboard": {}
     },
-    "dependencies": {
-        "@angular/common": "4.4.3",
-        "@angular/compiler": "4.4.3",
-        "@angular/compiler-cli": "4.4.3",
-        "@angular/core": "4.4.3",
-        "@angular/forms": "4.4.3",
-        "@angular/http": "4.4.3",
-        "@angular/platform-browser": "4.4.3",
-        "@angular/platform-browser-dynamic": "4.4.3",
-        "@ionic-native/core": "3.12.1",
-        "@ionic-native/splash-screen": "3.12.1",
-        "@ionic-native/status-bar": "3.12.1",
-        "@ionic/storage": "2.0.1",
-        "cordova-ios": "^4.4.0",
-        "cordova-plugin-device": "^1.1.4",
-        "cordova-plugin-splashscreen": "^4.0.3",
-        "cordova-plugin-statusbar": "^2.2.2",
-        "cordova-plugin-whitelist": "^1.3.1",
-        "ionic-angular": "3.7.1",
-        "ionic-plugin-keyboard": "^2.2.1",
-        "ionicons": "3.0.0",
-        "rxjs": "5.4.3",
-        "sw-toolbox": "3.6.0",
-        "zone.js": "0.8.18"
-    },
-    "devDependencies": {
-        "@ionic/app-scripts": "3.0.0",
-        "typescript": "2.3.4"
-    },
-    "description": "An Ionic project",
-    "cordova": {
-        "plugins": {
-            "cordova-plugin-device": {},
-            "cordova-plugin-splashscreen": {},
-            "cordova-plugin-statusbar": {},
-            "cordova-plugin-whitelist": {},
-            "ionic-plugin-keyboard": {}
-        },
-        "platforms": [
-            "ios"
-        ]
-    }
+    "platforms": [
+      "ios"
+    ]
+  },
+  "config": {
+    "ionic_webpack": "./webpack.config.js"
+  }
 }
