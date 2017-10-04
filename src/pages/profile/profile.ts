@@ -22,7 +22,6 @@ export class ProfilePage {
     var a: PlayerInfo = new PlayerInfo();
     this.info = a.getInfo();
     this.calculateData();
-    
   }
 
   calculateData(){
