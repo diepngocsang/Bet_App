@@ -4,8 +4,6 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-
-
 <ion-content padding class="login-content">
     <div class="mask">
     </div>
@@ -18,22 +16,20 @@
             <ion-list class="list-form">
                 <ion-item>
                     <ion-label fixed>Username:</ion-label>
-                    <ion-input type="text" value="" maxlength="16"></ion-input>
+                    <ion-input type="text" value="" maxlength="16" [(ngModel)]="username"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label fixed>Password:</ion-label>
-                    <ion-input type="password"></ion-input>
+                    <ion-input type="password" maxlength="16" [(ngModel)]="password"></ion-input>
                 </ion-item>
             </ion-list>
             <div class="btn-log">
-                <button ion-button>Submit</button>
+                <button ion-button (click)="loginProcess(username,password)">Submit</button>
             </div>
             <div class="register-side">
                 <p>Don't have an account?</p>
-                <p>Register</p>
+                <p (click)="goSignup()">Register</p>
             </div>
         </div>
     </div>
-
-
 </ion-content>
