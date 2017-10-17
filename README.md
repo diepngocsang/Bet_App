@@ -14,8 +14,9 @@ Install package.
 ```bash
 $ npm install
 ```
+
 #### Step 3:
-Open new cmd and run ionic serve to view the client app
+Then, to run it, cd into `SmartBet` and run:
 
 ```bash
 $ ionic cordova platform add ios

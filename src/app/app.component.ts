@@ -16,7 +16,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{ title: string, component: any }>;
+  pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -34,10 +34,9 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      if (this.platform.is('cordova')) {
         this.statusBar.styleLightContent();
         this.splashScreen.hide();
-      }
+      
     });
   }
 
