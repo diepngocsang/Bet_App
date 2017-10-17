@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { Login } from '../pages/login/login';
+import { Signup } from '../pages/signup/step1/signup';
 import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -18,7 +19,8 @@ import {HttpModule} from '@angular/http';
     HomePage,
     ListPage,
     ProfilePage,
-    Login
+    Login,
+    Signup
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {HttpModule} from '@angular/http';
     HomePage,
     ListPage,
     ProfilePage,
-    Login
+    Login,
+    Signup
   ],
   providers: [
     StatusBar,
