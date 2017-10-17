@@ -74,14 +74,8 @@ var devConfig = {
 
   resolve: {
     extensions: ['.ts', '.js', '.json'],
-    modules: [path.resolve('node_modules')],
-    alias: {
-      'api': path.resolve(__dirname, 'api/server')
-    }
+    modules: [path.resolve('node_modules')]
   },
-  externals: [
-    resolveExternals
-  ],
   module: {
     loaders: [
       {
@@ -148,20 +142,6 @@ var prodConfig = {
   }
 };
 
-function resolveExternals(context, request, callback) {
-  return resolveMeteor(request, callback) ||
-    callback();
-}
-
-function resolveMeteor(request, callback) {
-  var match = request.match(/^meteor\/(.+)$/);
-  var pack = match && match[1];
-
-  if (pack) {
-    callback(null, 'Package["' + pack + '"]');
-    return true;
-  }
-}
 module.exports = {
   dev: devConfig,
   prod: prodConfig

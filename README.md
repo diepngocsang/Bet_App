@@ -14,20 +14,7 @@ Install package.
 ```bash
 $ npm install
 ```
-
 #### Step 3:
-Run meteor client bundle
-```bash
-$ npm run meteor-client
-```
-
-#### Step 4:
-Start server
-```bash
-$ npm run start-server
-```
-
-#### Step 5:
 Open new cmd and run ionic serve to view the client app
 
 ```bash

@@ -11,9 +11,6 @@
     ],
     "module": "commonjs",
     "moduleResolution": "node",
-    "paths": {
-      "api/*": ["./api/server/*"]
-    },
     "sourceMap": true,
     "target": "es5",
     "skipLibCheck": true,
@@ -24,13 +21,10 @@
     ]
   },
   "include": [
-    "src/**/*.ts",
-    "api/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "api/node_modules",
-    "api"
+    "node_modules"
   ],
   "compileOnSave": false,
   "atom": {

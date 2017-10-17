@@ -1,27 +1,18 @@
 import { Component } from '@angular/core';
-import { Chats } from 'api/collections';
-import { Chat } from 'api/models';
 import { NavController } from 'ionic-angular';
-import { Observable } from 'rxjs';
-import { MeteorObservable } from 'meteor-rxjs';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import * as EventSource from 'eventsource';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
 })
 export class ListPage {
-  chats;
-
-  constructor(public navCtrl: NavController) {
-    this.chats = Chats.find({}).mergeMap((chats: Chat[]) =>
-      Observable.combineLatest()
-    ).zone();
-    //Sample call meteor methods
-    MeteorObservable.call('addChats', 'test 111',
-      'https://randomuser.me/api/portraits/thumb/women/1.jpg'
-    ).zone().subscribe();
+  constructor(public navCtrl: NavController, public http: Http) {
+    let src = new EventSource('http://localhost:3000/api/tests/change-stream?_format=event-stream');
+    src.addEventListener('data', (msg) => {
+      console.log(JSON.parse(msg.data)); // the change object
+    });
   }
-
-
-
 }
