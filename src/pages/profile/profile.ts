@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { PlayerInfo } from '../../services/services/profileinfo';
 import { BusinessRule } from '../../services/utilities/businessrule';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-profile',
@@ -15,7 +16,7 @@ export class ProfilePage {
   winRate: Number;
   totalLose: Number;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private storage:Storage) {
     
   }
   
@@ -27,7 +28,7 @@ export class ProfilePage {
   }
 
   calculateData(){
-    var countFunc: BusinessRule = new BusinessRule();
+    var countFunc: BusinessRule = new BusinessRule(this.storage);
     
     this.titleName  = this.info.firstname + ' ' + this.info.lastname;
     this.fullName = this.info.lastname + ' ' + this.info.midname + ' ' + this.info.firstname;
