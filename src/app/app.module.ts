@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
 
+// Import Component
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -9,9 +13,9 @@ import { Login } from '../pages/login/login';
 import { Signup } from '../pages/signup/step1/signup';
 import { ProfilePage } from '../pages/profile/profile';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import {HttpModule} from '@angular/http';
+// Import local storage
+import { IonicStorageModule } from '@ionic/storage'
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import {HttpModule} from '@angular/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,8 +43,11 @@ import {HttpModule} from '@angular/http';
   ],
   providers: [
     StatusBar,
+    Storage,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {
+      provide: ErrorHandler, useClass: IonicErrorHandler
+    }
   ]
 })
 export class AppModule {}

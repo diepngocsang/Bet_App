@@ -1,13 +1,10 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Signup } from '../signup/step1/signup';
+import { Storage } from '@ionic/storage';
 
-/**
- * Generated class for the Login page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//Import component
+import { Signup } from '../signup/step1/signup';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-login',
@@ -17,12 +14,12 @@ export class Login {
   username: String;
   password: String;
   signupPage = Signup;
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(public navCtrl: NavController, private storage: Storage) {}
 
   loginProcess(){
     if(this.username === "admin" && this.password === "123"){
-      console.log('Login Success');
+      this.navCtrl.setRoot(HomePage);
+      this.storage.set('isLogin', true);
     }else{
       console.log('Login Fail');
     }
