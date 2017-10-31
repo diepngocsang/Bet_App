@@ -32,8 +32,7 @@ export class HomePage {
 
   goToLogin(){
     var businessrule: BusinessRule = new BusinessRule(this.storage);
-    businessrule.checkLogin()
-    .then((val)=>{
+    businessrule.checkLogin().then((val)=>{
       if(!val){
         this.navCtrl.push(Login);
       }else{
