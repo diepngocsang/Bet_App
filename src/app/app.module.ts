@@ -15,6 +15,8 @@ import { ProfilePage } from '../pages/profile/profile';
 
 // Import local storage
 import { IonicStorageModule } from '@ionic/storage'
+import { UserServiceProvider } from '../providers/user-service/user-service';
+import { API } from '../utilities/config';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { IonicStorageModule } from '@ionic/storage'
     SplashScreen,
     {
       provide: ErrorHandler, useClass: IonicErrorHandler
-    }
+    },
+    UserServiceProvider,
+    API
   ]
 })
-export class AppModule {}
+export class AppModule { }

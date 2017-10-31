@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { PlayerInfo } from '../../services/services/profileinfo';
-import { BusinessRule } from '../../services/utilities/businessrule';
+import { BusinessRule } from '../../utilities/businessrule';
 import { Storage } from '@ionic/storage';
 
 @Component({

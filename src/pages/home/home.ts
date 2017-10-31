@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage';
 
 // Import Component
 import { Login } from '../login/login';
-import { BusinessRule } from '../../services/utilities/businessrule';
+import { BusinessRule } from '../../utilities/businessrule';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
