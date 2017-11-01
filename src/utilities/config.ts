@@ -11,7 +11,8 @@ export class API {
         LOGOUT: this.accountsURL + '/logout',
         REGISTER: this.accountsURL,
         CHANGE_PASS: this.accountsURL + '/changePassword',
-        FORGOT_PASS: this.accountsURL + '/forgotPassword'
+        FORGOT_PASS: this.accountsURL + '/forgotPassword',
+        CHECK_EMAIL: this.accountsURL + '/checkEmailExists'
     };
 
     constructor(private http: Http) { }

@@ -54,6 +54,13 @@ export class UserServiceProvider {
       .catch(this.handleErrorPromise);
   }
 
+  checkEmailExists(input) {
+    return this.http.post(this.api.accountAction.CHECK_EMAIL, JSON.stringify(input), this.options)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleErrorPromise);
+  }
+
   forgotPassword(input) {
     return this.http.post(this.api.accountAction.FORGOT_PASS, JSON.stringify(input), this.options)
       .toPromise()
