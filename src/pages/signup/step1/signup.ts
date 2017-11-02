@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UserServiceProvider } from '../../../providers/user-service/user-service';
+
+import { Login } from '../../login/login';
 /**
  * Generated class for the Login page.
  *
@@ -37,7 +39,9 @@ export class Signup {
         password: this.myForm.controls.password.value
       };
       this.userService.createAccount(info).then(data => {
-        console.log(data);
+        if(data.success){
+          this.navCtrl.setRoot(Login);
+        }
       });
     };
   };

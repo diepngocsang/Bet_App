@@ -1,10 +1,9 @@
-
 import { Injectable } from '@angular/core';
 // Import Local Storage
 import { Storage } from '@ionic/storage';
 @Injectable()
 export class BusinessRule {
-    constructor(private storage: Storage) { }
+    constructor() { }
 
     public countWinRate(totalWin: number, totalMatch: number): number {
         return (totalWin / totalMatch) * 100;
@@ -16,10 +15,8 @@ export class BusinessRule {
 
     async checkLogin(): Promise<any> {
         const promise = new Promise((resolve, reject) => {
-            // do some async stuff
-            this.storage.get('isLogin').then((val) => {
-                resolve(val);
-            });
+            var usr = JSON.parse(localStorage.getItem('currentUser'));
+            resolve(usr);
         });
         return promise;
     }

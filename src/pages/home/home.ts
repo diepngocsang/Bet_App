@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 // Import Local Storage
 import { Storage } from '@ionic/storage';
@@ -15,7 +16,7 @@ export class HomePage {
   loginPage = Login;
   isLogin: boolean;
 
-  constructor(public navCtrl: NavController,private storage: Storage) {
+  constructor(public navCtrl: NavController,private storage: Storage, public alertCtrl: AlertController) {
     
   }
 
@@ -31,15 +32,19 @@ export class HomePage {
   }
 
   goToLogin(){
-    this.navCtrl.push(Login);
-    // var businessrule: BusinessRule = new BusinessRule(this.storage);
-    // businessrule.checkLogin().then((val)=>{
-    //   if(!val){
-    //     this.navCtrl.push(Login);
-    //   }else{
-    //     alert(val);
-    //   }
-    // })
+    var businessrule: BusinessRule = new BusinessRule();
+    businessrule.checkLogin().then((val)=>{
+      if(!val.token){
+        this.navCtrl.push(Login);
+      }else{
+        let alert = this.alertCtrl.create({
+          title: 'Log In',
+          subTitle: 'Logged In! Implementing navigate to another page!',
+          buttons: ['OK']
+        });
+        alert.present();
+      }
+    });
     
     // this.storage.get('isLogin').then((val) => {
     //   this.isLogin = val;
