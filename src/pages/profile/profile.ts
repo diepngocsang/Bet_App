@@ -28,13 +28,13 @@ export class ProfilePage {
   }
 
   calculateData(){
-    var countFunc: BusinessRule = new BusinessRule(this.storage);
+    // var countFunc: BusinessRule = new BusinessRule();
     
-    this.titleName  = this.info.firstname + ' ' + this.info.lastname;
-    this.fullName = this.info.lastname + ' ' + this.info.midname + ' ' + this.info.firstname;
+    // this.titleName  = this.info.firstname + ' ' + this.info.lastname;
+    // this.fullName = this.info.lastname + ' ' + this.info.midname + ' ' + this.info.firstname;
 
-    this.winRate = countFunc.countWinRate(this.info.totalwin, this.info.totalmatch);
-    this.totalLose = countFunc.countTotalLose(this.info.totalwin, this.info.totalmatch);
+    // this.winRate = countFunc.countWinRate(this.info.totalwin, this.info.totalmatch);
+    // this.totalLose = countFunc.countTotalLose(this.info.totalwin, this.info.totalmatch);
     // this.winRate = (this.info.totalwin / this.info.totalmatch) * 100; 
     // this.totalLose = this.info.totalmatch - this.info.totalwin;
   }

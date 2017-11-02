@@ -44,6 +44,8 @@ export class HomePage {
         });
         alert.present();
       }
+    }).catch(()=>{
+      this.navCtrl.push(Login);
     });
     
     // this.storage.get('isLogin').then((val) => {

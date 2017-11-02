@@ -16,7 +16,11 @@ export class BusinessRule {
     async checkLogin(): Promise<any> {
         const promise = new Promise((resolve, reject) => {
             var usr = JSON.parse(localStorage.getItem('currentUser'));
-            resolve(usr);
+            if(usr){
+                resolve(usr);
+            }else{
+                reject();
+            }
         });
         return promise;
     }

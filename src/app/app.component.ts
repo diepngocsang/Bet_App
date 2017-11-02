@@ -7,7 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ProfilePage } from '../pages/profile/profile';
 import { MenuController } from 'ionic-angular';
-
+import { UserServiceProvider } from '../providers/user-service/user-service';
+import { Login } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +20,7 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menuCtrl: MenuController) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menuCtrl: MenuController,private userService: UserServiceProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -39,18 +40,27 @@ export class MyApp {
         this.splashScreen.hide();
       }
     });
-  }
+  };
+
+  logOut(){
+    this.userService.signout().then((result)=>{
+      if(result.success){
+        this.nav.setRoot(Login);
+        this.menuCtrl.close();
+      }
+    });
+  };
 
   openProfile() {
     if(JSON.parse(localStorage.getItem('currentUser')).token){
       this.nav.setRoot(ProfilePage);
       this.menuCtrl.close();
     };
-  }
+  };
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     // this.nav.setRoot(page.component);
-  }
+  };
 }
