@@ -25,12 +25,12 @@ export class UserServiceProvider {
       .catch(this.handleErrorPromise);
   }
 
-  signin(input): Promise<Accounts> {
+  signin(input): Promise<any> {
     return this.http.post(this.api.accountAction.LOGIN, JSON.stringify(input), this.options)
       .toPromise()
       .then((res) => {
         localStorage.setItem('currentUser', JSON.stringify({ email: res.json().data.email, token: res.json().data.id }));
-        return res.json().data;
+        return res.json();
       })
       .catch(this.handleErrorPromise);
   }

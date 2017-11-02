@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { UserServiceProvider } from '../../../providers/user-service/user-service';
 /**
  * Generated class for the Login page.
  *
@@ -14,12 +14,38 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'signup.html',
 })
 export class Signup {
-
-  constructor(public navCtrl: NavController) {
+  public myForm: FormGroup; // our model driven form
+  constructor(public navCtrl: NavController, private formBuilder: FormBuilder, private userService: UserServiceProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Login');
-  }
+  ngOnInit() {
+    this.myForm = new FormGroup({
+      username: new FormControl(''),
+      password: new FormControl(''),
+      confirm: new FormControl(''),
+      firstname: new FormControl(''),
+      lastname: new FormControl(''),
+    });
+  };
 
+  submitForm() {
+    if (this.myForm.controls.confirm.value === this.myForm.controls.password.value) {
+      let info = {
+        firstName: this.myForm.controls.firstname.value,
+        lastName: this.myForm.controls.lastname.value,
+        email: this.myForm.controls.username.value,
+        password: this.myForm.controls.password.value
+      };
+      this.userService.createAccount(info).then(data => {
+        console.log(data);
+      });
+    };
+  };
 }
+
+export class RegisInfo {
+  username: String;
+  password: String;
+  firstname: String;
+  lastname: String;
+};

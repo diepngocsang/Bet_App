@@ -15,3 +15,21 @@
 .bar-button-default-ios {
     color: #E0BB92;
 }
+
+.content-menu {
+    background: #E0BB92;
+    .avatar {
+        position: absolute;
+        top: 20vw;
+        width: 100%;
+        text-align: center;
+        img {
+            width: 30vw;
+            height: 30vw;
+            background: white;
+            padding: 5px;
+            border: 4px solid white;
+            border-radius: 50%;
+        }
+    }
+}

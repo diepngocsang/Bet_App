@@ -31,14 +31,15 @@ export class HomePage {
   }
 
   goToLogin(){
-    var businessrule: BusinessRule = new BusinessRule(this.storage);
-    businessrule.checkLogin().then((val)=>{
-      if(!val){
-        this.navCtrl.push(Login);
-      }else{
-        alert(val);
-      }
-    })
+    this.navCtrl.push(Login);
+    // var businessrule: BusinessRule = new BusinessRule(this.storage);
+    // businessrule.checkLogin().then((val)=>{
+    //   if(!val){
+    //     this.navCtrl.push(Login);
+    //   }else{
+    //     alert(val);
+    //   }
+    // })
     
     // this.storage.get('isLogin').then((val) => {
     //   this.isLogin = val;
