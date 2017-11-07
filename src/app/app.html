@@ -3,20 +3,20 @@
     <ion-content class="content-menu">
         <div class="avatar">
             <img src="./assets/icon/boy.png" alt="" (click)="openProfile()">
-            <div>
+            <!-- <div>
                 <button (click)="logOut()">Logout</button>
-            </div>
-
+            </div> -->
         </div>
         <div class="navigate-info">
-            <!-- <ion-list>
-                <ion-item>
-                    <ion-icon name="leaf" item-start></ion-icon>
-                    Herbology
-                    <ion-icon name="rose" item-end></ion-icon>
+            <ion-list>
+                <ion-item *ngFor="let item of pages" (click)="openPage(item)">
+                    <ion-icon name="{{item.icon}}" item-start></ion-icon>
+                    {{item.title}}
                 </ion-item>
-            </ion-list> -->
-
+            </ion-list>
+        </div>
+        <div class="btn-log">
+            <button *ngIf="isLogged" (click)="logOut()">Sign Out</button>
         </div>
     </ion-content>
 </ion-menu>

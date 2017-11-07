@@ -32,4 +32,33 @@
             border-radius: 50%;
         }
     }
+    .navigate-info {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        padding: 0 30px;
+        .item {
+            background: transparent;
+            border-top: none;
+            border-bottom: 1px solid black;
+            padding: 0;
+            .item-inner {
+                border: none;
+            }
+        }
+    }
+    .btn-log {
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+        text-align: center;
+        button {
+            width: 125px;
+            height: 40px;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid black;
+            font-size: 3.5vw;
+        }
+    }
 }

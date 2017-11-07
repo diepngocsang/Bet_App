@@ -17,17 +17,18 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-
-  pages: Array<{ title: string, component: any }>;
+  isLogged: boolean;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menuCtrl: MenuController,private userService: UserServiceProvider) {
+    this.isLogged = false;
     this.initializeApp();
-
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: HomePage, icon: 'ios-home' },
+      { title: 'List of Matches', component: ListPage, icon: 'ios-football' }
     ];
+   
 
   }
 
@@ -40,6 +41,9 @@ export class MyApp {
         this.splashScreen.hide();
       }
     });
+    if(JSON.parse(localStorage.getItem('currentUser'))){
+      this.isLogged = true;
+    };
   };
 
   logOut(){
@@ -52,7 +56,7 @@ export class MyApp {
   };
 
   openProfile() {
-    if(JSON.parse(localStorage.getItem('currentUser')).token){
+    if(JSON.parse(localStorage.getItem('currentUser'))){
       this.nav.setRoot(ProfilePage);
       this.menuCtrl.close();
     };
@@ -61,6 +65,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    // this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component);
+    this.menuCtrl.close();
   };
 }
