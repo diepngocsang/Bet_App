@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
-// Import Local Storage
-import { Storage } from '@ionic/storage';
-
 // Import Component
 import { Login } from '../login/login';
 import { BusinessRule } from '../../utilities/businessrule';
@@ -16,27 +13,27 @@ export class HomePage {
   loginPage = Login;
   isLogin: boolean;
 
-  constructor(public navCtrl: NavController,private storage: Storage, public alertCtrl: AlertController) {
-    
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+
   }
 
   ngOnInit() {
     this.initData();
   }
-  
-  initData(){
+
+  initData() {
     console.log('Init Function');
     // var a : Test = new Test();
     // this.items=a.getInfo();
     // console.log(this.items);
   }
 
-  goToLogin(){
+  goToLogin() {
     var businessrule: BusinessRule = new BusinessRule();
-    businessrule.checkLogin().then((val)=>{
-      if(!val.token){
+    businessrule.checkLogin().then((val) => {
+      if (!val.token) {
         this.navCtrl.push(Login);
-      }else{
+      } else {
         let alert = this.alertCtrl.create({
           title: 'Log In',
           subTitle: 'Logged In! Implementing navigate to another page!',
@@ -44,10 +41,10 @@ export class HomePage {
         });
         alert.present();
       }
-    }).catch(()=>{
+    }).catch(() => {
       this.navCtrl.push(Login);
     });
-    
+
     // this.storage.get('isLogin').then((val) => {
     //   this.isLogin = val;
     //   if(!this.isLogin){
@@ -56,7 +53,7 @@ export class HomePage {
     //     alert('Logged In');
     //   }
     // });
-    
+
   }
 
 }

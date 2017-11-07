@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { PlayerInfo } from '../../services/services/profileinfo';
-import { BusinessRule } from '../../utilities/businessrule';
-import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-profile',
@@ -16,7 +14,7 @@ export class ProfilePage {
   winRate: Number;
   totalLose: Number;
 
-  constructor(public navCtrl: NavController, private storage:Storage) {
+  constructor(public navCtrl: NavController) {
     
   }
   

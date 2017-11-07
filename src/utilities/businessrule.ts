@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-// Import Local Storage
-import { Storage } from '@ionic/storage';
+
 @Injectable()
 export class BusinessRule {
     constructor() { }

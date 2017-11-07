@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { UserServiceProvider } from '../../../providers/user-service/user-service';
 
 import { Login } from '../../login/login';
@@ -17,7 +17,7 @@ import { Login } from '../../login/login';
 })
 export class Signup {
   public myForm: FormGroup; // our model driven form
-  constructor(public navCtrl: NavController, private formBuilder: FormBuilder, private userService: UserServiceProvider) {
+  constructor(public navCtrl: NavController, private userService: UserServiceProvider) {
   }
 
   ngOnInit() {
