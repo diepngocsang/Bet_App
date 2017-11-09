@@ -5,6 +5,7 @@ import { AlertController } from 'ionic-angular';
 // Import Component
 import { Login } from '../login/login';
 import { BusinessRule } from '../../utilities/businessrule';
+import { ListMatchPage } from '../list-match/list-match';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -34,12 +35,13 @@ export class HomePage {
       if (!val.token) {
         this.navCtrl.push(Login);
       } else {
-        let alert = this.alertCtrl.create({
-          title: 'Log In',
-          subTitle: 'Logged In! Implementing navigate to another page!',
-          buttons: ['OK']
-        });
-        alert.present();
+        this.navCtrl.push(ListMatchPage);
+        // let alert = this.alertCtrl.create({
+        //   title: 'Log In',
+        //   subTitle: 'Logged In! Implementing navigate to another page!',
+        //   buttons: ['OK']
+        // });
+        // alert.present();
       }
     }).catch(() => {
       this.navCtrl.push(Login);

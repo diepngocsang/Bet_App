@@ -17,6 +17,10 @@ import { ProfilePage } from '../pages/profile/profile';
 import { IonicStorageModule } from '@ionic/storage'
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { API } from '../utilities/config';
+import { PubSubServiceProvider } from '../providers/pub-sub-service/pub-sub-service';
+import { PubSubProvider } from '../providers/pub-sub/pub-sub';
+import { BusinessProvider } from '../providers/business/business';
+import { ListMatchPage } from '../pages/list-match/list-match';
 
 
 @NgModule({
@@ -26,7 +30,8 @@ import { API } from '../utilities/config';
     ListPage,
     ProfilePage,
     Login,
-    Signup
+    Signup,
+    ListMatchPage,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { API } from '../utilities/config';
     ListPage,
     ProfilePage,
     Login,
-    Signup
+    Signup,
+    ListMatchPage
   ],
   providers: [
     StatusBar,
@@ -51,7 +57,9 @@ import { API } from '../utilities/config';
       provide: ErrorHandler, useClass: IonicErrorHandler
     },
     UserServiceProvider,
-    API
+    API,
+    PubSubProvider,
+    BusinessProvider
   ]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
 import { UserServiceProvider } from '../../../providers/user-service/user-service';
-
+import { AlertController } from 'ionic-angular';
 import { Login } from '../../login/login';
 /**
  * Generated class for the Login page.
@@ -17,7 +17,9 @@ import { Login } from '../../login/login';
 })
 export class Signup {
   public myForm: FormGroup; // our model driven form
-  constructor(public navCtrl: NavController, private userService: UserServiceProvider) {
+  constructor(public navCtrl: NavController,
+    private userService: UserServiceProvider,
+    private alertCtrl: AlertController) {
   }
 
   ngOnInit() {
@@ -39,8 +41,16 @@ export class Signup {
         password: this.myForm.controls.password.value
       };
       this.userService.createAccount(info).then(data => {
-        if(data.success){
-          this.navCtrl.setRoot(Login);
+        console.log(data);
+        if (data.success) {
+          let alert = this.alertCtrl.create({
+            title: 'Sign Up!',
+            subTitle: data.message,
+            buttons: ['OK']
+          });
+          alert.present().then(()=>{
+            this.navCtrl.setRoot(Login);
+          });
         }
       });
     };

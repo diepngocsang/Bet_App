@@ -10,6 +10,11 @@ import { MenuController } from 'ionic-angular';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { Login } from '../pages/login/login';
 
+import { Subscription } from 'rxjs/Subscription';
+import { PubSubProvider } from '../providers/pub-sub/pub-sub';
+
+import { BusinessProvider } from '../providers/business/business'
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,17 +24,36 @@ export class MyApp {
   rootPage: any = HomePage;
   isLogged: boolean;
   pages: Array<{ title: string, component: any, icon: string }>;
+  subscription: Subscription;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menuCtrl: MenuController,private userService: UserServiceProvider) {
+  constructor(public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public menuCtrl: MenuController,
+    private userService: UserServiceProvider,
+    private pubsub: PubSubProvider,
+    private business: BusinessProvider) {
+  }
+
+  ngOnInit() {
     this.isLogged = false;
-    this.initializeApp();
+    this.business.checkLogin().then((result)=>{
+      if(result){
+        this.isLogged = true;
+      }
+    });
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'ios-home' },
       { title: 'List of Matches', component: ListPage, icon: 'ios-football' }
     ];
-   
+    this.subscription = this.pubsub.subcribeLogin().subscribe(value => { this.isLogged = value; });
+    this.initializeApp();
+  }
 
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
   }
 
   initializeApp() {
@@ -41,14 +65,12 @@ export class MyApp {
         this.splashScreen.hide();
       }
     });
-    if(JSON.parse(localStorage.getItem('currentUser'))){
-      this.isLogged = true;
-    };
+
   };
 
-  logOut(){
-    this.userService.signout().then((result)=>{
-      if(result.success){
+  logOut() {
+    this.userService.signout().then((result) => {
+      if (result.success) {
         this.nav.setRoot(Login);
         this.menuCtrl.close();
       }
@@ -56,10 +78,12 @@ export class MyApp {
   };
 
   openProfile() {
-    if(JSON.parse(localStorage.getItem('currentUser'))){
-      this.nav.setRoot(ProfilePage);
-      this.menuCtrl.close();
-    };
+    this.business.checkLogin().then((result)=>{
+      if(result){
+        this.nav.setRoot(ProfilePage);
+        this.menuCtrl.close();
+      }
+    });
   };
 
   openPage(page) {
