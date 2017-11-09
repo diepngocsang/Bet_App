@@ -1,18 +1,20 @@
+// Import Lib
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Subscription } from 'rxjs/Subscription';
+import { MenuController } from 'ionic-angular';
 
+// Import Pages - Components
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ProfilePage } from '../pages/profile/profile';
-import { MenuController } from 'ionic-angular';
-import { UserServiceProvider } from '../providers/user-service/user-service';
 import { Login } from '../pages/login/login';
 
-import { Subscription } from 'rxjs/Subscription';
+// Import Providers - Services
+import { UserServiceProvider } from '../providers/user-service/user-service';
 import { PubSubProvider } from '../providers/pub-sub/pub-sub';
-
 import { BusinessProvider } from '../providers/business/business'
 
 @Component({
@@ -21,11 +23,13 @@ import { BusinessProvider } from '../providers/business/business'
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  // Define Variable
   rootPage: any = HomePage;
   isLogged: boolean;
   pages: Array<{ title: string, component: any, icon: string }>;
   subscription: Subscription;
 
+  // Define Providers - Services
   constructor(public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
@@ -35,39 +39,45 @@ export class MyApp {
     private business: BusinessProvider) {
   }
 
+  // Init function
   ngOnInit() {
+    // isLogged is variable to defined Logged In or Not - Default value: False (Not Logged In)
     this.isLogged = false;
     this.business.checkLogin().then((result)=>{
       if(result){
         this.isLogged = true;
       }
     });
-    // used for an example of ngFor and navigation
+
+    // Define Component on Menu
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'ios-home' },
       { title: 'List of Matches', component: ListPage, icon: 'ios-football' }
     ];
+
+    // Subcribe value
     this.subscription = this.pubsub.subcribeLogin().subscribe(value => { this.isLogged = value; });
+
+    // Call initializeApp Function
     this.initializeApp();
   }
 
+  // Destroy Event Function
   ngOnDestroy() {
-    // unsubscribe to ensure no memory leaks
+    // Unsubscribe
     this.subscription.unsubscribe();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       if (this.platform.is('cordova')) {
         this.statusBar.styleLightContent();
         this.splashScreen.hide();
       }
     });
-
   };
 
+  // Logout Function
   logOut() {
     this.userService.signout().then((result) => {
       if (result.success) {
@@ -77,6 +87,7 @@ export class MyApp {
     });
   };
 
+  // Navigate to Profile
   openProfile() {
     this.business.checkLogin().then((result)=>{
       if(result){
@@ -86,10 +97,10 @@ export class MyApp {
     });
   };
 
+  // Navigate page on Menu
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+    // Close side menu
     this.menuCtrl.close();
   };
 }

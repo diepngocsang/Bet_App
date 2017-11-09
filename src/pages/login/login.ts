@@ -1,22 +1,28 @@
+// Import Lib
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-//Import component
-import { Signup } from '../signup/step1/signup';
-import { HomePage } from '../home/home';
+import { App } from 'ionic-angular';
+
+// Import Providers - Services
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { PubSubProvider } from '../../providers/pub-sub/pub-sub';
+
+// Import Pages - Components
+import { Signup } from '../signup/step1/signup';
+import { HomePage } from '../home/home';
 import { ListMatchPage } from '../../pages/list-match/list-match';
-import { App } from 'ionic-angular';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class Login {
+  // Define Variables
   username: String;
   password: String;
   signupPage = Signup;
+
   constructor(public navCtrl: NavController,
     public viewCtrl: ViewController, 
     private userService: UserServiceProvider,
@@ -24,28 +30,22 @@ export class Login {
     private pubsub: PubSubProvider,
     public app: App) {}
 
+    // Login function with userService
   loginProcess(username,password){
+    // Object to POST
     let info = {
       email: username,
       password: password
     };
     this.userService.signin(info).then((result)=>{
+      // Login Success
       if(result.success){
         this.navCtrl.setRoot(HomePage);
         this.pubsub.publishLogin(true);
-        
-        // this.viewCtrl.dismiss().then(() => {
-        //   this.app.getRootNav().push(ListMatchPage);
-        // });
-        
-        // let alert = this.alertCtrl.create({
-        //   title: 'Login Successfully!',
-        //   subTitle: 'List of Matches is implementing!',
-        //   buttons: ['OK']
-        // });
-        // alert.present();
       }
     }).catch((error)=>{
+      // Error status 401: Wrong Username - Password
+      // Error status 402: Duplicate Username
       if(error.status === 401){
         let alert = this.alertCtrl.create({
           title: 'Login failed!',
@@ -57,6 +57,7 @@ export class Login {
     });
   }
 
+  // Navigate to Sign Up
   goSignup(){
     this.navCtrl.push(Signup);
   }

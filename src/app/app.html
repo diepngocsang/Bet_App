@@ -3,9 +3,6 @@
     <ion-content class="content-menu">
         <div class="avatar">
             <img src="./assets/icon/boy.png" alt="" (click)="openProfile()">
-            <!-- <div>
-                <button (click)="logOut()">Logout</button>
-            </div> -->
         </div>
         <div class="navigate-info">
             <ion-list>
@@ -19,6 +16,7 @@
             <button *ngIf="isLogged" (click)="logOut()">Sign Out</button>
         </div>
     </ion-content>
+    <!-- End Left Menu -->
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
