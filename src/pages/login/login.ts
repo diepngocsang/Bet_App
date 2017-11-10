@@ -40,7 +40,7 @@ export class Login {
     this.userService.signin(info).then((result)=>{
       // Login Success
       if(result.success){
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(ListMatchPage);
         this.pubsub.publishLogin(true);
       }
     }).catch((error)=>{

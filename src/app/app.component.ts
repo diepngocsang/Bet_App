@@ -16,6 +16,7 @@ import { Login } from '../pages/login/login';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business'
+import { ListMatchPage } from '../pages/list-match/list-match';
 
 @Component({
   templateUrl: 'app.html'
@@ -41,25 +42,48 @@ export class MyApp {
 
   // Init function
   ngOnInit() {
-    // isLogged is variable to defined Logged In or Not - Default value: False (Not Logged In)
-    this.isLogged = false;
-    this.business.checkLogin().then((result)=>{
-      if(result){
+    // Define Component on Menu
+    this.pages = [
+      { title: 'Home', component: HomePage, icon: 'ios-home' }
+    ];
+
+    this.isLogged = false;// isLogged is variable to defined Logged In or Not - Default value: False (Not Logged In)
+    this.business.checkLogin().then((result) => {
+      if (result) {
         this.isLogged = true;
+        this.changeMenuItem();
       }
     });
 
-    // Define Component on Menu
-    this.pages = [
-      { title: 'Home', component: HomePage, icon: 'ios-home' },
-      { title: 'List of Matches', component: ListPage, icon: 'ios-football' }
-    ];
-
     // Subcribe value
-    this.subscription = this.pubsub.subcribeLogin().subscribe(value => { this.isLogged = value; });
+    this.subscription = this.pubsub.subcribeLogin().subscribe(value => {
+      this.isLogged = value;
+      this.changeMenuItem()
+    });
 
     // Call initializeApp Function
     this.initializeApp();
+  }
+
+  // Change item in Left Menu
+  changeMenuItem() {
+    // Define items to add into Left Menu
+    let items = [
+      { title: 'List Of Matches', component: ListMatchPage, icon: 'ios-football' }
+    ];   
+    if (this.isLogged) {
+      items.forEach(item => {
+        this.pages.push(item);
+      });
+    } else {
+      for (var i = 0; i <= this.pages.length; i++) {
+        if (this.pages[i].title === 'List Of Matches') {
+          this.pages.splice(i, 1);
+        } else {
+          break;
+        }
+      }
+    }
   }
 
   // Destroy Event Function
@@ -89,12 +113,10 @@ export class MyApp {
 
   // Navigate to Profile
   openProfile() {
-    this.business.checkLogin().then((result)=>{
-      if(result){
-        this.nav.setRoot(ProfilePage);
-        this.menuCtrl.close();
-      }
-    });
+    if (this.isLogged) {
+      this.nav.setRoot(ProfilePage);
+      this.menuCtrl.close();
+    }
   };
 
   // Navigate page on Menu
