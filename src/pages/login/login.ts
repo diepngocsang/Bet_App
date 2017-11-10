@@ -43,16 +43,16 @@ export class Login {
         this.navCtrl.setRoot(ListMatchPage);
         this.pubsub.publishLogin(true);
       }
-    }).catch((error)=>{
-      // Error status 401: Wrong Username - Password
-      // Error status 402: Duplicate Username
-      if(error.status === 401){
+    }).catch( err => {
+      if(err._body!=undefined && JSON.parse(err._body).error!=undefined){
+        let error = JSON.parse(err._body).error;
+
         let alert = this.alertCtrl.create({
           title: 'Login failed!',
-          subTitle: 'Please check again your email and password!',
+          subTitle: error.message,
           buttons: ['OK']
         });
-        alert.present();      
+        alert.present();
       }
     });
   }

@@ -52,6 +52,19 @@ export class Signup {
             this.navCtrl.setRoot(Login);
           });
         }
+      }).catch(err => {
+        if(err._body!=undefined && JSON.parse(err._body).error!=undefined){
+          let error = JSON.parse(err._body).error;
+
+          let alert = this.alertCtrl.create({
+            title: 'Error!',
+            subTitle: error.message,
+            buttons: ['OK']
+          });
+          alert.present().then(()=>{
+            this.myForm.controls.username.reset();
+          });
+        }
       });
     };
   };
