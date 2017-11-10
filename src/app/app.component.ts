@@ -58,7 +58,7 @@ export class MyApp {
     // Subcribe value
     this.subscription = this.pubsub.subcribeLogin().subscribe(value => {
       this.isLogged = value;
-      this.changeMenuItem()
+      this.changeMenuItem();
     });
 
     // Call initializeApp Function
