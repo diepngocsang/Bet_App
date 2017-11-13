@@ -1,12 +1,32 @@
 page-list-match {
+    .card-ios {
+        border-radius: 15px;
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
     .card-ios .item-ios.item-block .item-inner {
         padding: 0;
     }
     .label-ios {
         margin: 0;
     }
+    .home-content {
+        background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
+        background-size: cover;
+    }
+    .toolbar-background {
+        background-color: transparent;
+    }
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: #E0BB92;
+        img {
+            width: 35vw;
+        }
+    }
     .team-side {
-        background: black;
+        background: url('../assets/images/bg/bg-team-side.jpg') no-repeat;
         margin: 0;
         padding: 0;
     }
@@ -17,12 +37,27 @@ page-list-match {
         justify-content: space-between;
         align-items: center;
         .vs {
-            color: wheat;
+            color: black;
             align-self: center;
         }
         img {
             width: 70px;
             height: 40px;
+        }
+    }
+    .btn-bet {
+        font-size: 2rem !important;
+    }
+    .stadium {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        img {
+            width: 25px;
+            height: 28px;
+        }
+        h2 {
+            padding-left: 15px;
         }
     }
 }
