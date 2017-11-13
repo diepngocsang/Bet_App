@@ -63,7 +63,7 @@ export class MyApp {
 
     // Call initializeApp Function
     this.initializeApp();
-  }
+  };
 
   // Change item in Left Menu
   changeMenuItem() {
@@ -82,15 +82,15 @@ export class MyApp {
         } else {
           break;
         }
-      }
+      };
     }
-  }
+  };
 
   // Destroy Event Function
   ngOnDestroy() {
     // Unsubscribe
     this.subscription.unsubscribe();
-  }
+  };
 
   initializeApp() {
     this.platform.ready().then(() => {
