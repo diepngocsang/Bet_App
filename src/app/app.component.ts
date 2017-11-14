@@ -26,6 +26,7 @@ export class MyApp {
 
   // Define Variable
   rootPage: any = HomePage;
+  count: number;
   isLogged: boolean;
   pages: Array<{ title: string, component: any, icon: string }>;
   subscription: Subscription;
@@ -68,13 +69,22 @@ export class MyApp {
   // Change item in Left Menu
   changeMenuItem() {
     // Define items to add into Left Menu
+    this.count = 0;
     let items = [
       { title: 'List Of Matches', component: ListMatchPage, icon: 'ios-football' }
-    ];   
+    ];
     if (this.isLogged) {
-      items.forEach(item => {
-        this.pages.push(item);
-      });
+      for (var i = 0; i < this.pages.length; i++) {
+        if (this.pages[i].title === 'List Of Matches') {
+          this.count = 1;
+          break;
+        }
+      }
+      if (this.count === 0) {
+        items.forEach(item => {
+          this.pages.push(item);
+        });
+      }
     } else {
       for (var i = 0; i <= this.pages.length; i++) {
         if (this.pages[i].title === 'List Of Matches') {

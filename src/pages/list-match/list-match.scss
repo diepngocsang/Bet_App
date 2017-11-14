@@ -37,8 +37,13 @@ page-list-match {
         justify-content: space-between;
         align-items: center;
         .vs {
+            padding: 0 0.5em;
+            height: 26px;
+            font-size: 1.4rem;
+            width: 30%;
             color: black;
-            align-self: center;
+            border-radius: 20px;
+            background-color: #E0BB92;
         }
         img {
             width: 70px;
@@ -47,6 +52,10 @@ page-list-match {
     }
     .btn-bet {
         font-size: 2rem !important;
+    }
+    .calendar {
+        @extend .stadium;
+        padding-bottom: 15px;
     }
     .stadium {
         display: flex;
