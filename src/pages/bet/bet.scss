@@ -1,0 +1,45 @@
+page-bet {
+    .card-ios {
+        border-radius: 15px;
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+    .card-ios .item-ios.item-block .item-inner {
+        padding: 0;
+    }
+    .label-ios {
+        margin: 0;
+    }
+    .home-content {
+        background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
+        background-size: cover;
+    }
+    .toolbar-background {
+        background-color: transparent;
+    }
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: #E0BB92;
+        img {
+            width: 35vw;
+        }
+    }
+    h2 {
+        font-size: 5vw;
+        padding-top: 10px;
+        color: black;
+        text-align: center;
+    }
+    .type1 {
+        background-color: rgba(223, 187, 148, 0.7);
+        border-radius: 10px;
+        color: black;
+        height: 250px;
+        margin-top: 5px;
+    }
+    .type2 {
+        @extend .type1;
+        margin-top: 15vw;
+    }
+}

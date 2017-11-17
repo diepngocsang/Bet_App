@@ -15,6 +15,8 @@ import { Login } from '../pages/login/login';
 import { Signup } from '../pages/signup/step1/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { ListMatchPage } from '../pages/list-match/list-match';
+import { BetPage } from '../pages/bet/bet';
+import { HelpContent } from '../pages/bet/help-content';
 
 // Import Services - Providers
 import { UserServiceProvider } from '../providers/user-service/user-service';
@@ -22,6 +24,8 @@ import { API } from '../utilities/config';
 import { PubSubServiceProvider } from '../providers/pub-sub-service/pub-sub-service';
 import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business';
+
+
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { BusinessProvider } from '../providers/business/business';
     Login,
     Signup,
     ListMatchPage,
+    BetPage,
+    HelpContent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import { BusinessProvider } from '../providers/business/business';
     ProfilePage,
     Login,
     Signup,
-    ListMatchPage
+    ListMatchPage,
+    BetPage,
+    HelpContent
   ],
   providers: [
     StatusBar,

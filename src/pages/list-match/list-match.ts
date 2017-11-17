@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { BetPage } from '../bet/bet';
 
 /**
  * Generated class for the ListMatchPage page.
@@ -13,12 +14,17 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'list-match.html',
 })
 export class ListMatchPage {
-
+  betPage: any;
+  params: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.betPage = BetPage;
+    this.params = 'Test Pass Params';
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListMatchPage');
+  goBet(){
+    this.navCtrl.push(BetPage,{
+      objectParams: this.params
+    });
   }
 
 }
