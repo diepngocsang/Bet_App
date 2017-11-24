@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
         <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
+            <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title class="head-title">Betting</ion-title>
         <ion-buttons ion-button end>
@@ -16,9 +16,67 @@
 <ion-content padding class="home-content">
     <div class="type1">
         <h2>Original</h2>
+        <div class="origin-side">
+            <div>
+                <h5>Home</h5>
+                <img [src]="detailMatch.teamHome.picture" alt="">
+                <div class="team-name">{{detailMatch.teamHome.teamName}}</div>
+            </div>
+            <div class="draw">
+                <ion-icon ios="ios-close" md="md-close"></ion-icon>
+            </div>
+            <div>
+                <h5>Away</h5>
+                <img [src]="detailMatch.teamAway.picture" alt="">
+                <div class="team-name">{{detailMatch.teamAway.teamName}}</div>
+            </div>
+        </div>
+        <div class="odd-side">
+            <div class="odd">
+                <div>{{detailMatch.odds[0].rate}}</div>
+                <div class="btn-bet" (click)="betFunc(detailMatch.odds[0])">
+                    <img src="./assets/icon/coin.png" alt="">
+                </div>
+            </div>
+            <div>:</div>
+            <div class="odd">
+                <div>{{detailMatch.odds[2].rate}}</div>
+                <div class="btn-bet" (click)="betFunc(detailMatch.odds[2])">
+                    <img src="./assets/icon/coin.png" alt="">
+                </div>
+            </div>
+            <div>:</div>
+            <div class="odd">
+                <div>{{detailMatch.odds[1].rate}}</div>
+                <div class="btn-bet" (click)="betFunc(detailMatch.odds[1])">
+                    <img src="./assets/icon/coin.png" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="type2">
         <h2>Over - Under</h2>
+        <div class="over-under">
+            <div class="under">
+                <h5>Under</h5>
+                <div class="rate">{{detailMatch.odds[4].rate}}</div>
+                <div class="btn-bet">
+                    <img src="./assets/icon/coin.png" alt="">
+                </div>
+            </div>
+            <div class="target">
+                <h5>Target</h5>
+                <div class="odd-symb">:</div>
+                <div class="target-num">{{detailMatch.odds[5].goal}}</div>
+            </div>
+            <div class="over">
+                <h5>Over</h5>
+                <div class="rate">{{detailMatch.odds[3].rate}}</div>
+                <div class="btn-bet">
+                    <img src="./assets/icon/coin.png" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 </ion-content>

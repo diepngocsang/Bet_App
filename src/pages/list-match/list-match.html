@@ -8,24 +8,25 @@
 </ion-header>
 
 <ion-content padding class="home-content">
-    <ion-card>
+
+    <ion-card [hidden]="!match.isActive" *ngFor="let match of listMatches">
         <ion-item class="team-side">
             <div class="team">
-                <img src="./assets/images/int-flag/england.png" alt="">
-                <button ion-button class="vs" (click)="goBet()">Betting</button>
-                <img src="./assets/images/int-flag/france.png" alt="">
+                <img [src]="match.teamHome.picture" alt="">
+                <button ion-button class="vs" (click)="goBet(match)">Betting</button>
+                <img [src]="match.teamAway.picture" alt="">
             </div>
         </ion-item>
         <ion-item class="bot-side">
             <div class="stadium">
                 <img src="./assets/icon/stadium.png" alt="">
-                <h2>Nou Camp</h2>
+                <h2>{{ match.stadium }}</h2>
             </div>
         </ion-item>
         <ion-item class="bot-side">
             <div class="calendar">
                 <img src="./assets/icon/calendar.png" alt="">
-                <h2>06/12/2018 - 20:45 P.M</h2>
+                <h2>{{ match.date| date:'dd/MM/yyyy'}} - {{match.date| date:'HH:mm a'}}</h2>
             </div>
         </ion-item>
     </ion-card>

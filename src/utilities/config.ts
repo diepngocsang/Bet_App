@@ -15,6 +15,12 @@ export class API {
         CHECK_EMAIL: this.accountsURL + '/checkEmailExists'
     };
 
+    //Matches API
+    private matchesURL = this.baseURL + '/Games';
+    accountGame = {
+        GET_ALL_GAMES: this.matchesURL + '/getGameWithTeam'
+    }
+
     constructor(private http: Http) { }
 
     //create authorization header

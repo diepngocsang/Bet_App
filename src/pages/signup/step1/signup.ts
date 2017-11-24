@@ -37,8 +37,9 @@ export class Signup {
       let info = {
         firstName: this.myForm.controls.firstname.value,
         lastName: this.myForm.controls.lastname.value,
-        email: this.myForm.controls.username.value,
-        password: this.myForm.controls.password.value
+        userName: this.myForm.controls.username.value,
+        password: this.myForm.controls.password.value,
+        email: this.myForm.controls.username.value
       };
       this.userService.createAccount(info).then(data => {
         console.log(data);

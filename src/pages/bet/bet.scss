@@ -37,9 +37,83 @@ page-bet {
         color: black;
         height: 250px;
         margin-top: 5px;
+        .origin-side{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 9vw 5px;
+            h5{
+                font-size: 3vw;
+                text-align: center;
+            }
+            .odd{
+                font-size: 4vw;
+                width: 30px;
+                text-align: center;
+            }
+            img{
+                width: 70px;
+                height: 40px;
+            }
+            .draw{
+                padding-top: 25px;
+                font-size: 7vw;
+            }
+            .team-name{
+                text-align: center;
+            }
+        }
+        .odd-side{
+            @extend .origin-side;
+            padding: 8px 14vw;
+            justify-content: space-between;
+            .odd{
+                font-size: 4vw;
+                width: 30px;
+                text-align: center;
+                .btn-bet{
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 20px;
+                    img{
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+                
+            }
+        }
     }
     .type2 {
         @extend .type1;
         margin-top: 15vw;
+        .over-under{
+            @extend .origin-side;
+            padding-left: 50px;
+            padding-right: 50px; 
+            .target{
+                div{
+                    @extend .odd;
+                    font-size: 15vw;
+                } 
+                .odd-symb{
+                    font-size: 4vw;
+                }
+            }
+            .under,.over{
+                .rate{
+                    font-size: 4vw;
+                    width: 30px;
+                    text-align: center;
+                }
+                .btn-bet{
+                    @extend .btn-bet;
+                    padding-top: 20px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
     }
 }
