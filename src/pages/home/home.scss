@@ -13,6 +13,14 @@ page-home {
     .home-content {
         background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
         background-size: cover;
+        .logo-side {
+            text-align: center;
+            padding-top: 20px;
+            animation: zoomIn 2s;
+            img {
+                width: 70vw;
+            }
+        }
         .list-match {
             .team {
                 display: flex;
@@ -59,25 +67,5 @@ page-home {
     h5 {
         text-align: center;
         color: white;
-    }
-    @keyframes heartbeat {
-        0% {
-            transform: scale( .75);
-        }
-        20% {
-            transform: scale( 1);
-        }
-        40% {
-            transform: scale( .75);
-        }
-        60% {
-            transform: scale( 1);
-        }
-        80% {
-            transform: scale( .75);
-        }
-        100% {
-            transform: scale( .75);
-        }
     }
 }

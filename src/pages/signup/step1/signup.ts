@@ -42,7 +42,6 @@ export class Signup {
         email: this.myForm.controls.username.value
       };
       this.userService.createAccount(info).then(data => {
-        console.log(data);
         if (data.success) {
           let alert = this.alertCtrl.create({
             title: 'Sign Up!',

@@ -25,6 +25,7 @@ import { PubSubServiceProvider } from '../providers/pub-sub-service/pub-sub-serv
 import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business';
 import { GameServiceProvider } from '../providers/game-service/game-service';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -44,7 +45,8 @@ import { GameServiceProvider } from '../providers/game-service/game-service';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

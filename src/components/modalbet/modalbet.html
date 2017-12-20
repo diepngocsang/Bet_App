@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Bet Detail</ion-title>
+        <ion-buttons start>
+            <button (click)="closeModal()" class="btn-dismiss-modal">
+          Cancel
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-content">
+    <div class="team-side" *ngIf="isDraw">
+        <img [src]="detailMatch.picture" alt="">
+        <h5>{{detailMatch.teamName}}</h5>
+    </div>
+    <div class="draw-side" *ngIf="!isDraw">
+        <img alt="" src="./assets/images/icons/draw.png">
+        <h1>DRAW</h1>
+    </div>
+    <div class="bet-side">
+        <ion-input type="tel" [(ngModel)]="betPoint" maxlength="6" placeholder="Please input your Point"></ion-input>
+    </div>
+    <div class="btn-side">
+        <button (click)="betMatch(betPoint)">Bet</button>
+    </div>
+    <div class="notice">
+        <div>
+            <p><i>*<u>Notes:</u></i></p>
+            <ul type="disc">
+                <li><span>Current point: </span><span class="number">10000</span></li>
+                <li><span>Maximum Bet: </span><span class="number">5000</span></li>
+                <li><span>Minimum Bet: </span><span class="number">1000</span></li>
+            </ul>
+        </div>
+    </div>
+</ion-content>

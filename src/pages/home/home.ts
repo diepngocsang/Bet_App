@@ -31,7 +31,6 @@ export class HomePage {
 
   // InitData function
   initData() {
-    console.log('Init Function');
   }
 
   // Navigate to Login - List Match

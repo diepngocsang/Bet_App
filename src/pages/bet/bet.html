@@ -34,22 +34,28 @@
         <div class="odd-side">
             <div class="odd">
                 <div>{{detailMatch.odds[0].rate}}</div>
-                <div class="btn-bet" (click)="betFunc(detailMatch.odds[0])">
-                    <img src="./assets/icon/coin.png" alt="">
+                <div class="btn-bet">
+                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[0], detailMatch.teamHome)">
+                        <img src="./assets/icon/coin.png" alt="">
+                      </button>
                 </div>
             </div>
             <div>:</div>
             <div class="odd">
                 <div>{{detailMatch.odds[2].rate}}</div>
-                <div class="btn-bet" (click)="betFunc(detailMatch.odds[2])">
-                    <img src="./assets/icon/coin.png" alt="">
+                <div class="btn-bet">
+                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[2])">
+                        <img src="./assets/icon/coin.png" alt="">
+                      </button>
                 </div>
             </div>
             <div>:</div>
             <div class="odd">
                 <div>{{detailMatch.odds[1].rate}}</div>
-                <div class="btn-bet" (click)="betFunc(detailMatch.odds[1])">
-                    <img src="./assets/icon/coin.png" alt="">
+                <div class="btn-bet">
+                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[1],detailMatch.teamAway)">
+                        <img src="./assets/icon/coin.png" alt="">
+                      </button>
                 </div>
             </div>
         </div>

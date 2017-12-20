@@ -24,12 +24,17 @@ export class ListMatchPage {
     this.params = 'Test Pass Params';
     this.gameService.getAllGames().then((res) => {
       this.listMatches = res.data;
-      console.log(this.listMatches);
     });
   }
   
   ngOnInit(){
     
+  }
+
+  doRefresh(refresher) {
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
   }
 
   goBet(itemMatch) {
