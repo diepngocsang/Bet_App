@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Bet Detail</ion-title>
+        <ion-title></ion-title>
         <ion-buttons start>
             <button (click)="closeModal()" class="btn-dismiss-modal">
           Cancel
@@ -16,10 +16,13 @@
     </div>
     <div class="draw-side" *ngIf="!isDraw">
         <img alt="" src="./assets/images/icons/draw.png">
-        <h1>DRAW</h1>
+        <h1 *ngIf="!isDraw && valueBet.key==='Over'">Over</h1>
+        <h1 *ngIf="!isDraw && valueBet.key==='Under'">Under</h1>
+        <h1 *ngIf="!isDraw && valueBet.key==='Draw'">DRAW</h1>
     </div>
     <div class="bet-side">
-        <ion-input type="tel" [(ngModel)]="betPoint" maxlength="6" placeholder="Please input your Point"></ion-input>
+        <p>Please input your Point to Bet:</p>
+        <ion-input type="tel" [(ngModel)]="betPoint" maxlength="6"></ion-input>
     </div>
     <div class="btn-side">
         <button (click)="betMatch(betPoint)">Bet</button>

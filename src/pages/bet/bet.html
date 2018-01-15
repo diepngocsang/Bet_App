@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title class="head-title">Betting</ion-title>
+        <ion-title class="head-title">Bet Information</ion-title>
         <ion-buttons ion-button end>
             <!-- <button (click)="openHelp()"></button>
             <ion-icon name="ios-help-circle"></ion-icon> -->
@@ -68,7 +68,10 @@
                 <h5>Under</h5>
                 <div class="rate">{{detailMatch.odds[4].rate}}</div>
                 <div class="btn-bet">
-                    <img src="./assets/icon/coin.png" alt="">
+                    <!-- <img src="./assets/icon/coin.png" alt=""> -->
+                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[4])">
+                        <img src="./assets/icon/coin.png" alt="">
+                      </button>
                 </div>
             </div>
             <div class="target">
@@ -80,7 +83,10 @@
                 <h5>Over</h5>
                 <div class="rate">{{detailMatch.odds[3].rate}}</div>
                 <div class="btn-bet">
-                    <img src="./assets/icon/coin.png" alt="">
+                    <!-- <img src="./assets/icon/coin.png" alt=""> -->
+                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[3])">
+                        <img src="./assets/icon/coin.png" alt="">
+                      </button>
                 </div>
             </div>
         </div>

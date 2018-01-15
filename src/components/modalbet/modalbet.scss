@@ -1,14 +1,4 @@
 modalbet {
-    .text-input::-moz-placeholder {
-        font-size: 4vw;
-    }
-    .text-input:-ms-input-placeholder {
-        font-size: 4vw;
-    }
-    .text-input::-webkit-input-placeholder {
-        text-indent: 0;
-        font-size: 4vw;
-    }
     .btn-dismiss-modal {
         background: none;
         font-size: 4vw;
@@ -34,7 +24,7 @@ modalbet {
         text-align: center;
         img {
             width: 40vw;
-            padding-top: 50px;
+            padding-top: 30px;
         }
         h1 {
             text-align: center;
@@ -44,8 +34,11 @@ modalbet {
         }
     }
     .bet-side {
+        p {
+            text-align: center;
+        }
         ion-input {
-            padding: 30px 60px;
+            padding: 0 30px 30px;
             text-align: center;
             font-size: 13vw;
             .text-input-ios {
@@ -68,9 +61,7 @@ modalbet {
     }
     .notice {
         width: 100%;
-        padding: 0 20px;
-        position: absolute;
-        bottom: 10px;
+        padding: 40px 20px 0;
         div {
             border: 1px solid black;
             border-radius: 10px;

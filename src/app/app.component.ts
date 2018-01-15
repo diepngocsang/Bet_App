@@ -17,6 +17,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
 import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business'
 import { ListMatchPage } from '../pages/list-match/list-match';
+import { RankingPage } from '../pages/ranking/ranking';
 
 @Component({
   templateUrl: 'app.html'
@@ -71,7 +72,8 @@ export class MyApp {
     // Define items to add into Left Menu
    this.count = 0;
     let items = [
-      { title: 'List Of Matches', component: ListMatchPage, icon: 'ios-football' }
+      { title: 'List Of Matches', component: ListMatchPage, icon: 'ios-football' },
+      { title: 'Rankings', component: RankingPage, icon: 'ios-trophy' }
     ];   
     if (this.isLogged) {
       for( var i = 0; i < this.pages.length; i++){

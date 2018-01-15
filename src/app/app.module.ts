@@ -17,6 +17,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ListMatchPage } from '../pages/list-match/list-match';
 import { BetPage } from '../pages/bet/bet';
 import { HelpContent } from '../pages/bet/help-content';
+import { RankingPage } from '../pages/ranking/ranking';
 
 // Import Services - Providers
 import { UserServiceProvider } from '../providers/user-service/user-service';
@@ -38,6 +39,7 @@ import { ComponentsModule } from '../components/components.module';
     Login,
     Signup,
     ListMatchPage,
+    RankingPage,
     BetPage,
     HelpContent
   ],
@@ -57,6 +59,7 @@ import { ComponentsModule } from '../components/components.module';
     Login,
     Signup,
     ListMatchPage,
+    RankingPage,
     BetPage,
     HelpContent
   ],

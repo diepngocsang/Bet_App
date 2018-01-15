@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, NavParams, ViewController } from 'ionic-angular';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the ModalbetComponent component.
  *
@@ -16,7 +16,7 @@ export class ModalbetComponent {
   valueBet: Object;
   isDraw: boolean;
   betPoint: number;
-  constructor(params: NavParams, public viewCtrl: ViewController) {
+  constructor(params: NavParams, public viewCtrl: ViewController,public alertCtrl: AlertController) {
     this.valueBet = params.get('valueBet');
     this.detailMatch = params.get('objGames');
     this.isDraw = true;
@@ -29,9 +29,22 @@ export class ModalbetComponent {
       this.isDraw = false;
     }
   }
+  
+  showAlert(title,message){
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 
   betMatch(betPoint){
-    console.log(betPoint);
+    if(betPoint == undefined || betPoint == ""){
+      this.showAlert('Warning!','Oops! Please fill out all fields in order to proceed.');
+    }else{
+      console.log(betPoint);
+    }
   }
 
   closeModal(){

@@ -49,7 +49,7 @@ export class BetPage {
       let profileModal = this.modalCtrl.create(ModalbetComponent, 
         { valueBet: valueBet, objGames: subValue }
       );
-      profileModal.present();  
+      profileModal.present();
     }else{
       let profileModal = this.modalCtrl.create(ModalbetComponent, 
         { valueBet: valueBet, objGames: false }
