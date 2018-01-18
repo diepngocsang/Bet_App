@@ -4,23 +4,23 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-<ion-content padding class="login-content">
+<ion-content class="login-content">
     <div class="mask">
-    </div>
-    <div class="logo-log">
-        <img src="./assets/images/icons/log-logo.png" alt="">
+        <div class="logo-log">
+            <img src="./assets/images/icons/log-logo.png" alt="">
+        </div>
     </div>
     <div class="login-form">
-        <h1>Sign In</h1>
+        <h1>Welcome to SmartBet!</h1>
         <div class="form">
             <ion-list class="list-form">
                 <ion-item>
-                    <ion-label fixed>Username:</ion-label>
-                    <ion-input type="text" value="" maxlength="254" [(ngModel)]="username"></ion-input>
+                    <ion-label class="label" fixed>Username:</ion-label>
+                    <ion-input placeholder="Your Username" type="text" maxlength="25" [(ngModel)]="username"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label fixed>Password:</ion-label>
-                    <ion-input type="password" maxlength="16" [(ngModel)]="password"></ion-input>
+                    <ion-input placeholder="Your Password" type="password" maxlength="16" [(ngModel)]="password"></ion-input>
                 </ion-item>
             </ion-list>
             <div class="btn-log">

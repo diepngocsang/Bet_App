@@ -1,9 +1,12 @@
 <ion-menu [content]="content">
     <!-- Left Menu -->
     <ion-content class="content-menu">
-        <div class="avatar">
-            <img src="./assets/icon/boy.png" alt="" (click)="openProfile()">
+        <div class="ava-side">
+            <div class="avatar">
+                <img src="./assets/icon/boy.png" alt="" (click)="openProfile()">
+            </div>
         </div>
+
         <div class="navigate-info">
             <ion-list>
                 <ion-item *ngFor="let item of pages" (click)="openPage(item)">

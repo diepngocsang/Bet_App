@@ -72,7 +72,7 @@ export class MyApp {
     // Define items to add into Left Menu
    this.count = 0;
     let items = [
-      { title: 'List Of Matches', component: ListMatchPage, icon: 'ios-football' },
+      { title: 'Active Bet', component: ListMatchPage, icon: 'ios-football' },
       { title: 'Rankings', component: RankingPage, icon: 'ios-trophy' }
     ];   
     if (this.isLogged) {

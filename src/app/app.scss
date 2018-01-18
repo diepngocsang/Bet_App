@@ -13,7 +13,15 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .bar-button-default-ios {
-    color: #E0BB92;
+    color: white;
+}
+
+.ios ion-menu>.menu-inner>ion-content.statusbar-padding:first-child .scroll-content {
+    padding: 0;
+}
+
+ion-header {
+    background: #c21a24;
 }
 
 // .bar-buttons-ios[end] {
@@ -24,19 +32,23 @@
 }
 
 .content-menu {
-    background: #E0BB92;
-    .avatar {
-        position: absolute;
-        top: 20vw;
-        width: 100%;
-        text-align: center;
-        img {
-            width: 30vw;
-            height: 30vw;
-            background: white;
-            padding: 5px;
-            border: 4px solid white;
-            border-radius: 50%;
+    background: white;
+    .ava-side {
+        background: #c21a24;
+        height: 25vh;
+        position: relative;
+        .avatar {
+            position: absolute;
+            bottom: -10vw;
+            width: 100%;
+            text-align: center;
+            img {
+                width: 30vw;
+                height: 30vw;
+                background: white;
+                padding: 5px;
+                border-radius: 50%;
+            }
         }
     }
     .navigate-info {
@@ -63,9 +75,9 @@
             width: 125px;
             height: 40px;
             border-radius: 30px;
-            background: transparent;
-            border: 1px solid black;
+            background: #c21a24;
             font-size: 3.5vw;
+            color: white;
         }
     }
 }
@@ -258,6 +270,30 @@
     100% {
         -webkit-transform: translateX(0);
         transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideInUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 }
 

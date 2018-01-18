@@ -31,7 +31,7 @@ page-list-match {
         padding: 0;
     }
     .team {
-        padding: 20px;
+        padding: 20px 20px 0 20px;
         height: 100px;
         display: flex;
         justify-content: space-between;
@@ -50,23 +50,12 @@ page-list-match {
             height: 40px;
         }
     }
+    .schedule {
+        text-align: center;
+        padding-bottom: 10px;
+        color: white;
+    }
     .btn-bet {
         font-size: 2rem !important;
-    }
-    .calendar {
-        @extend .stadium;
-        padding-bottom: 15px;
-    }
-    .stadium {
-        display: flex;
-        align-items: center;
-        padding-top: 10px;
-        img {
-            width: 25px;
-            height: 28px;
-        }
-        h2 {
-            padding-left: 15px;
-        }
     }
 }

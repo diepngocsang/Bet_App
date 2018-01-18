@@ -4,41 +4,70 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-<ion-content padding class="login-content">
-    <div class="mask">
-
+<ion-content class="signup-content">
+    <div class="head">
+        <div class="logo">
+            <img src="./assets/images/icons/log-logo.png" alt="">
+        </div>
+    </div>
+    <div class="signup">
+        <h1>Be a Member!</h1>
+        <ion-list class="list" [formGroup]="myForm">
+            <ion-item>
+                <ion-label class="label-text" fixed>Username:</ion-label>
+                <ion-input type="text" maxlength="25" formControlName="username" placeholder="Your Username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="label-text" fixed>Password:</ion-label>
+                <ion-input type="password" maxlength="16" formControlName="password" placeholder="Your Password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="label-text" fixed>Confirm:</ion-label>
+                <ion-input type="password" maxlength="16" placeholder="Confirm Password" formControlName="confirm"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="label-text" fixed>First Name:</ion-label>
+                <ion-input type="text" maxlength="50" formControlName="firstname" placeholder="Your First Name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="label-text" fixed>Last Name:</ion-label>
+                <ion-input type="text" maxlength="50" formControlName="lastname" placeholder="Your Last Name"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+    <!-- <div class="mask">
+        <div class="logo-log">
+            <img src="./assets/images/icons/log-logo.png" alt="">
+        </div>
     </div>
     <div class="login-form">
-        <div class="logo-log">
-            <h1>Sign Up</h1>
-        </div>
+        <h1>Be a Member!</h1>
         <div class="form">
             <ion-list class="list-form" [formGroup]="myForm">
                 <ion-item>
-                    <ion-label stacked>Username</ion-label>
-                    <ion-input type="text" formControlName="username"></ion-input>
+                    <ion-label class="label" fixed>Username:</ion-label>
+                    <ion-input type="text" maxlength="25" formControlName="username" placeholder="Your Username"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label stacked>Password</ion-label>
-                    <ion-input type="password" formControlName="password"></ion-input>
+                    <ion-label class="label" fixed>Password:</ion-label>
+                    <ion-input type="password" maxlength="16" formControlName="password" placeholder="Your Password"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label stacked>Confirm Password</ion-label>
-                    <ion-input type="password" formControlName="confirm"></ion-input>
+                    <ion-label class="label" fixed>Confirm:</ion-label>
+                    <ion-input type="password" maxlength="16" placeholder="Confirm Password" formControlName="confirm"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label stacked>First Name</ion-label>
-                    <ion-input type="text" formControlName="firstname"></ion-input>
+                    <ion-label class="label" fixed>First Name:</ion-label>
+                    <ion-input type="text" maxlength="50" formControlName="firstname" placeholder="Your First Name"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label stacked>Last Name</ion-label>
-                    <ion-input type="text" formControlName="lastname"></ion-input>
+                    <ion-label class="label" fixed>Last Name:</ion-label>
+                    <ion-input type="text" maxlength="50" formControlName="lastname" placeholder="Your Last Name"></ion-input>
                 </ion-item>
             </ion-list>
             <div class="btn-log">
                 <button ion-button (click)="submitForm()">Submit</button>
             </div>
         </div>
-    </div>
-
+    </div> -->
 </ion-content>

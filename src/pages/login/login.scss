@@ -7,62 +7,75 @@ page-login {
         border-width: 0;
     }
     .login-content {
-        background: url('../assets/images/bg/login-bg.jpg') no-repeat;
-        background-size: cover;
-        .mask {
-            background: #000000;
-            opacity: 0.7;
-            height: 70vh;
-            position: relative;
-            top: 35px;
-            left: 0;
-            border-radius: 10px;
+        .scroll-content {
+            overflow: hidden;
         }
-        .logo-log {
-            position: absolute;
+        .mask {
+            background: #c21a24;
+            height: 15vh;
+            position: relative;
             top: 0;
             width: 100%;
-            left: 0;
-            text-align: center;
-            img {
-                height: 30vw;
+            .logo-log {
+                position: absolute;
+                bottom: -10vw;
+                width: 100%;
+                left: 0;
+                text-align: center;
+                img {
+                    height: 30vw;
+                    border-radius: 10px;
+                }
             }
         }
         .login-form {
-            position: absolute;
-            top: 20vh;
-            left: 0;
             width: 100%;
+            top: 20vw;
+            position: relative;
+            .text-input::-moz-placeholder {
+                font-size: 3vw;
+                text-align: right;
+            }
+            .text-input:-ms-input-placeholder {
+                font-size: 3vw;
+                text-align: right;
+            }
+            .text-input::-webkit-input-placeholder {
+                text-indent: 0;
+                font-size: 3vw;
+                text-align: right;
+            }
             h1 {
-                font-size: 9vw;
+                font-size: 6vw;
                 text-align: center;
-                color: sandybrown;
+                color: black;
+                font-family: Gill Sans, Verdana;
+                animation: zoomIn 3s;
             }
             .form {
                 padding: 0 10vw 5vw;
                 .list-form {
-                    margin-bottom: 4.5vh !important;
-                }
-                .usr-icon {
-                    font-size: 11vw;
-                    color: white;
+                    margin-bottom: 6vh !important;
+                    .label {
+                        font-size: 4vw;
+                    }
                 }
                 .list-ios>.item-block:first-child {
                     border-top: 0;
                     background: none;
-                    color: white;
+                    color: black;
                     padding: 3vw 0;
                     .item-inner {
-                        border-bottom: 1px solid #fff;
+                        border-bottom: 1px solid lightgray;
                     }
                 }
                 .list-ios>.item-block:last-child {
                     border-bottom: 0;
                     background: none;
-                    color: white;
+                    color: black;
                     padding: 2vw 0;
                     .item-inner {
-                        border-bottom: 1px solid #fff;
+                        border-bottom: 1px solid lightgray;
                     }
                 }
                 .btn-log {
@@ -70,16 +83,17 @@ page-login {
                     text-align: center;
                     button {
                         width: 45vw;
+                        background: #c21a24;
                     }
                 }
                 .register-side {
                     padding-top: 4vw;
                     p:first-child {
-                        color: white;
+                        color: black;
                         text-align: center;
                     }
                     p:last-child {
-                        color: sandybrown;
+                        color: #c21a24;
                         text-align: center;
                         font-size: 5vw;
                         margin: 0;
