@@ -6,7 +6,17 @@ page-signup {
     .header-ios .toolbar-ios:last-child .toolbar-background-ios {
         border-width: 0;
     }
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: Gill Sans, Verdana;
+    }
     .signup-content {
+        .scroll-content {
+            padding-top: 0 !important;
+            overflow: hidden;
+        }
         .head {
             background: #c21a24;
             height: 15vh;
@@ -33,25 +43,77 @@ page-signup {
                 font-family: Gill Sans, Verdana;
             }
             ion-list {
-                padding: 0 10vw 5vw;
+                padding: 0 5vw 5vw;
+                .text-input {
+                    font-size: 4vw;
+                }
                 .text-input::-moz-placeholder {
-                    font-size: 3vw;
-                    text-align: right;
+                    font-size: 4vw;
+                    text-align: left;
                 }
                 .text-input:-ms-input-placeholder {
-                    font-size: 3vw;
-                    text-align: right;
+                    font-size: 4vw;
+                    text-align: left;
                 }
                 .text-input::-webkit-input-placeholder {
                     text-indent: 0;
-                    font-size: 3vw;
-                    text-align: right;
+                    font-size: 4vw;
+                    text-align: left;
                 }
                 .list {
                     .label-text {
                         font-size: 4vw;
                     }
                 }
+                ion-select {
+                    max-width: 100%;
+                    font-size: 4vw;
+                }
+                .select-ios {
+                    padding: 11px 8px 11px 0px;
+                    width: 100%;
+                }
+            }
+            .list-ios>.item-block:first-child {
+                border-top: 0;
+                background: none;
+                color: black;
+                padding: 3vw 0;
+                .item-inner {
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+            .list-ios>.item-block {
+                border-top: 0;
+                background: none;
+                color: black;
+                padding: 3vw 0;
+                .item-inner {
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+            .list-ios>.item-block:last-child {
+                border-bottom: 0;
+                background: none;
+                color: black;
+                padding: 2vw 0;
+                .item-inner {
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+        }
+        .btn-log {
+            text-align: center;
+            width: 100%;
+            button {
+                border-radius: 4px;
+                height: 10vw;
+                font-size: 4vw;
+                color: #fff;
+                background-color: #c21a24;
+                margin: 0.4rem 0.2rem;
+                padding: 0 1em;
+                width: 40vw;
             }
         }
     }

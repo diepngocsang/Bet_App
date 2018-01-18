@@ -29,6 +29,7 @@ export class Signup {
       confirm: new FormControl(''),
       firstname: new FormControl(''),
       lastname: new FormControl(''),
+      gender: new FormControl('')
     });
   };
 
@@ -39,7 +40,8 @@ export class Signup {
         lastName: this.myForm.controls.lastname.value,
         userName: this.myForm.controls.username.value,
         password: this.myForm.controls.password.value,
-        email: this.myForm.controls.username.value
+        email: this.myForm.controls.username.value,
+        gender: this.myForm.controls.gender.value
       };
       this.userService.createAccount(info).then(data => {
         if (data.success) {
