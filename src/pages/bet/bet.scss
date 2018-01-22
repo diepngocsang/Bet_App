@@ -1,3 +1,6 @@
+$bet-background-color:#f9f7ea;
+$vs-color:#13375c;
+$button-color:#c21a24;
 page-bet {
     .card-ios {
         border-radius: 15px;
@@ -11,8 +14,8 @@ page-bet {
         margin: 0;
     }
     .home-content {
-        // background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
-        // background-size: cover;
+        background-color: $bet-background-color; 
+        font-family: Gill Sans, Verdana;   
     }
     .toolbar-background {
         background-color: transparent;
@@ -29,18 +32,33 @@ page-bet {
         color: black;
         text-align: center;
     }
+    .rate{
+        font-size: 110%;
+        color: $vs-color;
+    }
     .type1 {
-        background-color: rgba(223, 187, 148, 0.7);
+        background-color: white;
         border-radius: 10px;
         color: black;
-        height: 250px;
-        margin-top: 5px;
+        height: 43%;
+        margin-top: 5%;
+        .vs{
+            font-size: 80%;
+            color: $vs-color;
+        }
+        h2{
+            border-bottom: 1px solid lightgrey;
+            padding: 10px;
+        }
+        .logo{
+            border-radius: 50%;
+        }
         .origin-side {
             display: flex;
             justify-content: space-between;
             padding: 15px 9vw 5px;
             h5 {
-                font-size: 3vw;
+                font-size: 120%;
                 text-align: center;
             }
             .odd {
@@ -58,6 +76,8 @@ page-bet {
             }
             .team-name {
                 text-align: center;
+                padding: 10px;
+                font-size: 110%
             }
         }
         .odd-side {
@@ -72,13 +92,9 @@ page-bet {
                     display: flex;
                     justify-content: center;
                     padding-top: 20px;
-                    .button[icon-only] {
-                        background: none;
-                        margin: 0;
-                    }
-                    img {
-                        height: 30px;
-                        width: 30px;
+                    .button {
+                        background-color: $button-color;
+                        height: 2em;
                     }
                 }
             }
@@ -95,6 +111,7 @@ page-bet {
                 div {
                     @extend .odd;
                     font-size: 15vw;
+                    color: $vs-color;
                 }
                 .odd-symb {
                     font-size: 4vw;
@@ -103,16 +120,17 @@ page-bet {
             .under,
             .over {
                 .rate {
-                    font-size: 4vw;
+                    @extend .rate;
                     width: 30px;
                     text-align: center;
+                    font-size: 140% !important;
                 }
                 .btn-bet {
                     @extend .btn-bet;
                     padding-top: 20px;
-                    .button[icon-only] {
-                        background: none;
-                        margin: 0;
+                    .button{
+                        background-color: $button-color;
+                        height: 2em;
                     }
                     img {
                         height: 30px;

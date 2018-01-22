@@ -23,7 +23,7 @@
                 <div class="team-name">{{detailMatch.teamHome.teamName}}</div>
             </div>
             <div class="draw">
-                <ion-icon ios="ios-close" md="md-close"></ion-icon>
+                <div class="vs">vs</div>
             </div>
             <div>
                 <h5>Away</h5>
@@ -33,28 +33,28 @@
         </div>
         <div class="odd-side">
             <div class="odd">
-                <div>{{detailMatch.odds[0].rate}}</div>
+                <div class="rate">{{detailMatch.odds[0].rate}}</div>
                 <div class="btn-bet">
-                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[0], detailMatch.teamHome)">
-                        <img src="./assets/icon/coin.png" alt="">
+                    <button ion-button (click)="betFunc(detailMatch.odds[0], detailMatch.teamHome)">
+                        Bet!
                       </button>
                 </div>
             </div>
             <div>:</div>
             <div class="odd">
-                <div>{{detailMatch.odds[2].rate}}</div>
+                <div class="rate">{{detailMatch.odds[2].rate}}</div>
                 <div class="btn-bet">
-                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[2])">
-                        <img src="./assets/icon/coin.png" alt="">
+                    <button ion-button (click)="betFunc(detailMatch.odds[2])">
+                        Bet!
                       </button>
                 </div>
             </div>
             <div>:</div>
             <div class="odd">
-                <div>{{detailMatch.odds[1].rate}}</div>
+                <div class="rate">{{detailMatch.odds[1].rate}}</div>
                 <div class="btn-bet">
-                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[1],detailMatch.teamAway)">
-                        <img src="./assets/icon/coin.png" alt="">
+                    <button ion-button (click)="betFunc(detailMatch.odds[1],detailMatch.teamAway)">
+                        Bet!
                       </button>
                 </div>
             </div>
@@ -69,8 +69,8 @@
                 <div class="rate">{{detailMatch.odds[4].rate}}</div>
                 <div class="btn-bet">
                     <!-- <img src="./assets/icon/coin.png" alt=""> -->
-                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[4])">
-                        <img src="./assets/icon/coin.png" alt="">
+                    <button ion-button (click)="betFunc(detailMatch.odds[4])">
+                        Bet!
                       </button>
                 </div>
             </div>
@@ -84,8 +84,8 @@
                 <div class="rate">{{detailMatch.odds[3].rate}}</div>
                 <div class="btn-bet">
                     <!-- <img src="./assets/icon/coin.png" alt=""> -->
-                    <button ion-button icon-only (click)="betFunc(detailMatch.odds[3])">
-                        <img src="./assets/icon/coin.png" alt="">
+                    <button ion-button (click)="betFunc(detailMatch.odds[3])">
+                        Bet!
                       </button>
                 </div>
             </div>
