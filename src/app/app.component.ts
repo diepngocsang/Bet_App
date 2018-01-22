@@ -77,7 +77,7 @@ export class MyApp {
     ];   
     if (this.isLogged) {
       for( var i = 0; i < this.pages.length; i++){
-        if(this.pages[i].title === 'List Of Matches'){
+        if(this.pages[i].title === 'Active Bet'){
           this.count = 1;
           break;
         }
@@ -89,7 +89,7 @@ export class MyApp {
       }
     } else {
       for ( i = 0; i <= this.pages.length; i++) {
-        if (this.pages[i].title === 'List Of Matches') {
+        if (this.pages[i].title === 'Active Bet') {
           this.pages.splice(i, 1);
         } else {
           break;

@@ -7,37 +7,51 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding class="home-content">
-    <div class="ava-side">
-
-        <div class="avatar">
+<ion-content class="home-content">
+    <div class="mask">
+        <div class="logo-log">
             <!-- Male: Boy -->
             <img *ngIf="info.gender" src="./assets/icon/boy.png" alt="">
             <!-- Male: Girl -->
             <img *ngIf="!info.gender" src="./assets/icon/girl.png" alt="">
         </div>
     </div>
-    <div class="full-name">
-        <!-- Title Name -->
-        <h3>{{titleName}}</h3>
+    <div class="name-side">
+        <h1>Hello {{fullName}}!</h1>
     </div>
     <div class="point-info">
-        <!-- Current Point -->
-        <div class="current-point">
-            <div class="title-p">Current Point</div>
-            <div class="number-p">{{info.currentpoint}}</div>
-        </div>
-        <!-- Total Matches Bet -->
-        <div class="total-bet">
-            <div class="title-p">Total Matches</div>
-            <div class="number-p text-center">{{info.totalmatch}}</div>
-        </div>
-        <!-- Winning Ratio -->
-        <div class="win-ratio">
-            <div class="title-p">Win Rate</div>
-            <div class="number-p">{{winRate | number}}%</div>
+        <ion-row>
+            <ion-col>
+                <div>Current Point</div>
+                <div class="number-p">{{info.currentpoint}}</div>
+            </ion-col>
+            <ion-col class="mid-col">
+                <div>Total Matches</div>
+                <div class="number-p text-center">{{info.totalmatch}}</div>
+            </ion-col>
+            <ion-col>
+                <div>Win Rate</div>
+                <div class="number-p">{{winRate | number}}%</div>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="details-side">
+        <h1>More Details</h1>
+        <div class="detail-info">
+            <div class="left">
+                <p>Full Name:</p>
+                <p>Total Win:</p>
+                <p>Total Lose:</p>
+            </div>
+            <div class="right">
+                <p class="upper-name">{{fullName}}</p>
+                <p>{{info.totalwin}}</p>
+                <p>{{totalLose}}</p>
+            </div>
         </div>
     </div>
+
+    <!-- 
     <div class="mask">
         <div class="details-side">
             <h5>More Details</h5>
@@ -58,6 +72,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </ion-content>

@@ -2,100 +2,141 @@
 page-profile {
     .toolbar-background {
         background-color: transparent;
+        border: none;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+        border-width: 0;
     }
     .toolbar-title {
         display: flex;
         justify-content: center;
-        color: #E0BB92;
+        color: white;
+        font-family: Gill Sans, Verdana;
     }
     .home-content {
-        // background-color: #5D0F18;
-        background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
-        background-size: cover;
-        .ava-side {
-            display: flex;
-            justify-content: center;
-            .avatar {
-                border: 3px solid white;
-                width: 150px;
-                height: 150px;
-                display: flex;
-                align-items: flex-end;
-                background: #E0BB92;
-                border-radius: 10px;
+        .mask {
+            background: #c21a24;
+            height: 15vh;
+            position: relative;
+            top: 0;
+            width: 100%;
+            .logo-log {
+                position: absolute;
+                bottom: -10vw;
+                width: 100%;
+                left: 0;
+                text-align: center;
                 img {
-                    width: 150px;
-                    height: 140px;
+                    width: 30vw;
+                    height: 30vw;
+                    background: white;
+                    padding: 5px;
+                    border-radius: 50%;
                 }
             }
         }
-        .full-name {
-            padding-top: 5vw;
-            display: flex;
-            justify-content: center;
-            h3 {
-                text-transform: capitalize;
-                color: #E0BB92;
+        .name-side {
+            width: 100%;
+            top: 13vw;
+            position: relative;
+            h1 {
+                margin: 0;
+                font-size: 6vw;
+                text-align: center;
+                color: black;
+                font-family: Gill Sans, Verdana;
+                animation: zoomIn 1s;
             }
         }
+        // .full-name {
+        //     padding-top: 5vw;
+        //     display: flex;
+        //     justify-content: center;
+        //     h3 {
+        //         text-transform: capitalize;
+        //         color: #E0BB92;
+        //     }
+        // }
         .point-info {
-            padding-top: 7vw;
+            padding-top: 20vw;
             display: flex;
             justify-content: space-between;
-            .total-bet {
-                border-left: 1px solid white;
-                padding: 0 4.5vw;
-                border-right: 1px solid white;
-            }
-            .win-ratio {
-                width: 23vw;
-            }
-            .text-center {
-                text-align: center !important;
-            }
-            .title-p {
-                color: #E0BB92;
-                font-size: 4vw;
+            ion-row {
+                width: 100%;
+                text-align: center;
+                font-family: Gill Sans, Verdana;
+                .mid-col {
+                    border-left: 1px solid black;
+                    border-right: 1px solid black;
+                }
             }
             .number-p {
-                color: white;
+                color: black;
                 font-size: 7vw;
                 padding-top: 2vw;
-                text-align: left;
+                text-align: center;
+                font-family: Gill Sans, Verdana;
             }
         }
-        .mask {
-            background: #E0BB92;
-            opacity: 0.7;
-            height: 35vh;
-            position: relative;
-            bottom: 0;
-            left: 0;
-            border-radius: 10px;
-            margin-top: 10vw;
-            .details-side {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                color: black;
-                padding: 5vw;
-                height: 100%;
-                line-height: 90%;
-                .detail-info {
-                    display: flex;
-                    justify-content: space-between;
-                    .right {
-                        text-align: right;
-                        .upper-name {
-                            text-transform: uppercase;
-                        }
+        .details-side {
+            padding-top: 10vw;
+            h1 {
+                font-family: Gill Sans, Verdana;
+                text-align: center;
+                font-size: 7vw;
+                font-weight: bold;
+            }
+            .detail-info {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 5vw 5vw;
+                p {
+                    font-family: Gill Sans, Verdana;
+                    font-size: 4vw;
+                }
+                .right {
+                    text-align: right;
+                    .upper-name {
+                        text-transform: uppercase;
                     }
                 }
-                h5 {
-                    text-align: center;
+                .left {
+                    font-weight: bold;
                 }
             }
         }
+        // .mask {
+        //     background: #E0BB92;
+        //     opacity: 0.7;
+        //     height: 35vh;
+        //     position: relative;
+        //     bottom: 0;
+        //     left: 0;
+        //     border-radius: 10px;
+        //     margin-top: 10vw;
+        //     .details-side {
+        //         position: absolute;
+        //         bottom: 0;
+        //         left: 0;
+        //         width: 100%;
+        //         color: black;
+        //         padding: 5vw;
+        //         height: 100%;
+        //         line-height: 90%;
+        //         .detail-info {
+        //             display: flex;
+        //             justify-content: space-between;
+        //             .right {
+        //                 text-align: right;
+        //                 .upper-name {
+        //                     text-transform: uppercase;
+        //                 }
+        //             }
+        //         }
+        //         h5 {
+        //             text-align: center;
+        //         }
+        //     }
+        // }
     }
 }

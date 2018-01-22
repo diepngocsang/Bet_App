@@ -19,10 +19,16 @@ export class ProfilePage {
   }
   
   ngOnInit() {
-    // console.log(this.bus.countWinRate(10,20));
-    var a: PlayerInfo = new PlayerInfo();
-    this.info = a.getInfo();
-    this.calculateData();
+    var usr = JSON.parse(localStorage.getItem('currentUser'));
+    this.info = usr;
+    //Fake Data
+    this.info.currentpoint = 10000;
+    this.info.totalmatch = 5;
+    this.info.gender = true;
+    this.info.totalwin = 3;
+    this.winRate = 73;
+    this.fullName = 'Sang Diep';
+    this.totalLose = 2;
   }
 
   calculateData(){
