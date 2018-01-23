@@ -1,3 +1,6 @@
+$bet-background-color:#f9f7ea;
+$vs-color:#13375c;
+$button-color:#c21a24;
 modalbet {
     .btn-dismiss-modal {
         background: none;
@@ -5,52 +8,59 @@ modalbet {
         color: #1c638a;
     }
     .toolbar-background {
-        background-color: #E0BB92;
+        background-color: $bet-background-color;
     }
     .bg-content {
-        background: #E0BB92;
+        background: $bet-background-color;
+        font-family: Gill Sans, Verdana;
     }
     .team-side {
         width: 100%;
         text-align: center;
         animation: lightSpeedIn 1s;
         img {
-            width: 40vw;
+            width: 35%;
             padding-top: 50px;
         }
+    }
+    h1 {
+        text-align: center;
+        font-family: 'Trebuchet MS';
+        animation: bounceIn 1s;
+        margin: 0;
+        padding: 13px;
+        color:$vs-color;
     }
     .draw-side {
         width: 100%;
         text-align: center;
         img {
-            width: 40vw;
+            width: 35%;
             padding-top: 30px;
         }
-        h1 {
-            text-align: center;
-            font-family: 'Trebuchet MS';
-            animation: bounceIn 1s;
-            margin: 0;
-        }
+        
     }
     .bet-side {
         p {
             text-align: center;
+            color:$vs-color;
+            font-size: 110%;
         }
         ion-input {
             padding: 0 30px 30px;
             text-align: center;
             font-size: 13vw;
             .text-input-ios {
-                border-bottom: 1px solid;
+                border-bottom: 1px solid $vs-color;
                 text-align: center;
+                color:$vs-color;
             }
         }
     }
     .btn-side {
         text-align: center;
         button {
-            background: #1c638a;
+            background: $button-color;
             color: white;
             border: none;
             width: 150px;
@@ -63,7 +73,8 @@ modalbet {
         width: 100%;
         padding: 40px 20px 0;
         div {
-            border: 1px solid black;
+            border: 1px solid $vs-color;
+            color:$vs-color;
             border-radius: 10px;
             padding: 0 15px;
             .number {

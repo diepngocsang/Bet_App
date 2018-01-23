@@ -12,10 +12,10 @@
 <ion-content class="bg-content">
     <div class="team-side" *ngIf="isDraw">
         <img [src]="detailMatch.picture" alt="">
-        <h5>{{detailMatch.teamName}}</h5>
+        <h1>{{detailMatch.teamName}}</h1>
     </div>
     <div class="draw-side" *ngIf="!isDraw">
-        <img alt="" src="./assets/images/icons/draw.png">
+        <img alt="" src="./assets/icon/logo2018.png">
         <h1 *ngIf="!isDraw && valueBet.key==='Over'">Over</h1>
         <h1 *ngIf="!isDraw && valueBet.key==='Under'">Under</h1>
         <h1 *ngIf="!isDraw && valueBet.key==='Draw'">DRAW</h1>
@@ -25,7 +25,7 @@
         <ion-input type="tel" [(ngModel)]="betPoint" maxlength="6"></ion-input>
     </div>
     <div class="btn-side">
-        <button (click)="betMatch(betPoint)">Bet</button>
+        <button (click)="betMatch(betPoint)">Bet!</button>
     </div>
     <div class="notice">
         <div>
