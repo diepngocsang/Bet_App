@@ -14,8 +14,7 @@ export class GameServiceProvider {
   }
   // Logout Function
   getAllGames() {
-    let token= JSON.parse(localStorage.getItem('currentUser')).token;
-    return this.http.get(this.api.accountGame.GET_ALL_GAMES + '?access_token='+ token, this.options)
+    return this.http.get(this.api.accountGame.GET_ALL_GAMES, this.options)
       .toPromise()
       .then((res) => {
         return res.json();

@@ -1,10 +1,17 @@
 page-home {
+    .card-ios {
+        border-radius: 15px;
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+    .card-ios .item-ios.item-block .item-inner {
+        padding: 0;
+    }
+    .label-ios {
+        margin: 0;
+    }
     .toolbar-background {
         background-color: transparent;
-        border: none;
-    }
-    .header-ios .toolbar-ios:last-child .toolbar-background-ios {
-        border-width: 0;
     }
     .toolbar-title {
         display: flex;
@@ -12,75 +19,89 @@ page-home {
         color: white;
         font-family: Gill Sans, Verdana;
     }
-    .home-content {
-        // background: url('../assets/images/bg/bg-main3.jpg') no-repeat;
-        // background-size: cover;
-        background: #c21a24;
-        .scroll-content {
-            overflow: hidden;
+    .item-ios-light,
+    .item-divider-ios-light {
+        font-size: 3.5vw;
+        font-family: Gill Sans, Verdana;
+    }
+    .group-item {
+        margin-top: 5vw;
+    }
+    .group-item:first-child {
+        margin-top: 0vw !important;
+    }
+    .item-ios {
+        padding: 0 10px !important;
+    }
+    .label-ios {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        .time {
+            font-family: Gill Sans, Verdana;
+            font-size: 4.5vw;
         }
-        .logo-side {
-            text-align: center;
-            padding-top: 20vw;
-            animation: zoomIn 1s;
-            img {
-                width: 40vw;
-                border-radius: 10px;
-            }
-        }
-        .list-match {
-            .team {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px 10px;
-                .vs {
-                    color: wheat;
-                    align-self: center;
-                }
-                img {
-                    width: 100px;
-                    height: 65px;
-                }
-            }
-            .short-inf {
-                color: white;
-                text-align: center;
-                span {
-                    font-weight: bold;
-                }
-            }
-        }
-        .button-bet {
-            position: absolute;
-            bottom: 25vh;
-            left: 0;
+        .team-vs {
             width: 100%;
-            text-align: center;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            text-align: center;
+            font-family: Gill Sans, Verdana;
+            font-size: 4.5vw;
+            align-items: center;
+            padding: 0 20px;
             img {
-                width: 70px;
+                width: 25px;
+                height: 20px;
             }
-            .text-bet {
-                color: red;
-                font-size: 5vw;
-                width: 45%;
-                background: white;
-                height: 12vw;
-                border-radius: 30px;
+            .col-name {
+                div {
+                    width: 20vw;
+                    max-width: 20vw;
+                    text-transform: lowercase;
+                }
+                div::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+            .logo {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                font-family: Gill Sans, Verdana;
             }
         }
     }
-    h1 {
-        text-align: center;
-        color: sandybrown;
+    .team-side {
+        background: url('../assets/images/bg/bg-team-side.jpg') no-repeat;
+        margin: 0;
+        padding: 0;
     }
-    h5 {
+    .team {
+        padding: 20px 20px 0 20px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .vs {
+            padding: 0 0.5em;
+            height: 26px;
+            font-size: 1.4rem;
+            width: 30%;
+            color: black;
+            border-radius: 20px;
+            background-color: #E0BB92;
+        }
+        img {
+            width: 70px;
+            height: 40px;
+        }
+    }
+    .schedule {
         text-align: center;
+        padding-bottom: 10px;
         color: white;
+    }
+    .btn-bet {
+        font-size: 2rem !important;
     }
 }

@@ -7,42 +7,45 @@ import { Login } from '../login/login';
 import { ActiveBetPage } from '../active-bet/active-bet';
 
 // Import Services - Providers
-import { BusinessProvider } from '../../providers/business/business'
+import { BusinessProvider } from '../../providers/business/business';
+import { GameServiceProvider } from '../../providers/game-service/game-service';
+import { SpinnerProvider } from '../../providers/spinner/spinner';
+import { Tabs } from 'ionic-angular/components/tabs/tabs';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  // Define variables
-  loginPage = Login;
-  isLogin: boolean;
+  listMatches: Array<any>;
+  grouplistMatches: any;
+  @ViewChild('myTabs') tabRef: Tabs;
 
   constructor(
-    public navCtrl: NavController,
-    public alertCtrl: AlertController,
-    private business: BusinessProvider
+    private loading:SpinnerProvider,
+    private gameService: GameServiceProvider
   ) {}
 
-  // Init Function
-  ngOnInit() {
+  
+  ionViewDidLoad(){
     this.initData();
   }
-
   // InitData function
   initData() {
-  }
-
-  // Navigate to Login - List Match
-  goToLogin() {
-    this.business.checkLogin().then((val) => {
-      if (!val.token) {
-        this.navCtrl.push(Login);
-      } else {
-        this.navCtrl.push(ActiveBetPage);
-      }
-    }).catch(() => {
-      this.navCtrl.push(Login);
+    this.loading.showSpinner();
+    this.gameService.getAllGames().then((res) => {
+      this.listMatches = res.data;
+      var groups = this.listMatches.reduce(function(obj,item){
+          obj[item.date] = obj[item.date] || [];
+          obj[item.date].push(item);
+          return obj;
+      }, {});
+      var myArray = Object.keys(groups).map(function(key){
+          return {date: key, data: groups[key]};
+      });
+      this.grouplistMatches = myArray;
+      this.loading.hideSpinner();
     });
   }
 
