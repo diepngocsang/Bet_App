@@ -12,9 +12,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 @Component({
   selector: 'page-list-match',
-  templateUrl: 'list-match.html',
+  templateUrl: 'active-bet.html',
 })
-export class ListMatchPage {
+export class ActiveBetPage {
   betPage: any;
   params: string;
   listMatches: Array<any>;

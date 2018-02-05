@@ -16,7 +16,8 @@
             </ion-list>
         </div>
         <div class="btn-log">
-            <button *ngIf="isLogged" (click)="logOut()">Sign Out</button>
+            <button *ngIf="isLogged" (click)="logOut()">Logout</button>
+            <button *ngIf="!isLogged" (click)="logIn()">Login</button>
         </div>
     </ion-content>
     <!-- End Left Menu -->

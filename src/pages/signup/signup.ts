@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
-import { UserServiceProvider } from '../../../providers/user-service/user-service';
+import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { AlertController } from 'ionic-angular';
-import { Login } from '../../login/login';
+import { Login } from '../login/login';
 /**
  * Generated class for the Login page.
  *

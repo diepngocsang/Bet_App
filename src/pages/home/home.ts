@@ -4,7 +4,7 @@ import { AlertController } from 'ionic-angular';
 
 // Import Component
 import { Login } from '../login/login';
-import { ListMatchPage } from '../list-match/list-match';
+import { ActiveBetPage } from '../active-bet/active-bet';
 
 // Import Services - Providers
 import { BusinessProvider } from '../../providers/business/business'
@@ -39,7 +39,7 @@ export class HomePage {
       if (!val.token) {
         this.navCtrl.push(Login);
       } else {
-        this.navCtrl.push(ListMatchPage);
+        this.navCtrl.push(ActiveBetPage);
       }
     }).catch(() => {
       this.navCtrl.push(Login);

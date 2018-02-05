@@ -8,7 +8,6 @@ import { MenuController } from 'ionic-angular';
 
 // Import Pages - Components
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { ProfilePage } from '../pages/profile/profile';
 import { Login } from '../pages/login/login';
 
@@ -16,7 +15,7 @@ import { Login } from '../pages/login/login';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business'
-import { ListMatchPage } from '../pages/list-match/list-match';
+import { ActiveBetPage } from '../pages/active-bet/active-bet';
 import { RankingPage } from '../pages/ranking/ranking';
 
 @Component({
@@ -72,7 +71,7 @@ export class MyApp {
     // Define items to add into Left Menu
    this.count = 0;
     let items = [
-      { title: 'Active Bet', component: ListMatchPage, icon: 'ios-football' },
+      { title: 'Active Bet', component: ActiveBetPage, icon: 'ios-football' },
       { title: 'Rankings', component: RankingPage, icon: 'ios-trophy' }
     ];   
     if (this.isLogged) {
@@ -121,6 +120,12 @@ export class MyApp {
         this.menuCtrl.close();
       }
     });
+  };
+
+  // Login Function
+  logIn() {
+    this.nav.push(Login);
+    this.menuCtrl.close();
   };
 
   // Navigate to Profile

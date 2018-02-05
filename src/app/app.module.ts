@@ -10,11 +10,10 @@ import { IonicStorageModule } from '@ionic/storage'
 // Import Components - Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { Login } from '../pages/login/login';
-import { Signup } from '../pages/signup/step1/signup';
+import { Signup } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
-import { ListMatchPage } from '../pages/list-match/list-match';
+import { ActiveBetPage } from '../pages/active-bet/active-bet';
 import { BetPage } from '../pages/bet/bet';
 import { HelpContent } from '../pages/bet/help-content';
 import { RankingPage } from '../pages/ranking/ranking';
@@ -27,6 +26,7 @@ import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business';
 import { GameServiceProvider } from '../providers/game-service/game-service';
 import { ComponentsModule } from '../components/components.module';
+import { SpinnerProvider } from '../providers/spinner/spinner';
 
 
 
@@ -34,11 +34,10 @@ import { ComponentsModule } from '../components/components.module';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     ProfilePage,
     Login,
     Signup,
-    ListMatchPage,
+    ActiveBetPage,
     RankingPage,
     BetPage,
     HelpContent
@@ -54,11 +53,10 @@ import { ComponentsModule } from '../components/components.module';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     ProfilePage,
     Login,
     Signup,
-    ListMatchPage,
+    ActiveBetPage,
     RankingPage,
     BetPage,
     HelpContent
@@ -73,7 +71,8 @@ import { ComponentsModule } from '../components/components.module';
     API,
     PubSubProvider,
     BusinessProvider,
-    GameServiceProvider
+    GameServiceProvider,
+    SpinnerProvider
   ]
 })
 export class AppModule { }

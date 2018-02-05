@@ -9,9 +9,10 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { PubSubProvider } from '../../providers/pub-sub/pub-sub';
 
 // Import Pages - Components
-import { Signup } from '../signup/step1/signup';
+import { Signup } from '../signup/signup';
 import { HomePage } from '../home/home';
-import { ListMatchPage } from '../../pages/list-match/list-match';
+import { ActiveBetPage } from '../../pages/active-bet/active-bet';
+import { SpinnerProvider } from '../../providers/spinner/spinner';
 
 @Component({
   selector: 'page-login',
@@ -24,27 +25,31 @@ export class Login {
   signupPage = Signup;
 
   constructor(public navCtrl: NavController,
-    public viewCtrl: ViewController, 
+    public viewCtrl: ViewController,
     private userService: UserServiceProvider,
-    public alertCtrl: AlertController, 
+    public alertCtrl: AlertController,
     private pubsub: PubSubProvider,
-    public app: App) {}
+    private loading: SpinnerProvider,
+    public app: App) { }
 
-    // Login function with userService
-  loginProcess(username,password){
+  // Login function with userService
+  loginProcess(username, password) {
+    this.loading.showSpinner();
     // Object to POST
     let info = {
       email: username,
       password: password
     };
-    this.userService.signin(info).then((result)=>{
+    this.userService.signin(info).then((result) => {
       // Login Success
-      if(result.success){
-        this.navCtrl.setRoot(ListMatchPage);
+      this.loading.hideSpinner();
+      if (result.success) {
+        this.navCtrl.setRoot(ActiveBetPage);
         this.pubsub.publishLogin(true);
       }
-    }).catch( err => {
-      if(err._body!=undefined && JSON.parse(err._body).error!=undefined){
+    }).catch(err => {
+      this.loading.hideSpinner();
+      if (err._body != undefined && JSON.parse(err._body).error != undefined) {
         let error = JSON.parse(err._body).error;
 
         let alert = this.alertCtrl.create({
@@ -58,7 +63,7 @@ export class Login {
   }
 
   // Navigate to Sign Up
-  goSignup(){
+  goSignup() {
     this.navCtrl.push(Signup);
   }
 

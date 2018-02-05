@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers} from '@angular/http';
 
 @Injectable()
 export class API {
@@ -21,7 +20,7 @@ export class API {
         GET_ALL_GAMES: this.matchesURL + '/getGameWithTeam'
     }
 
-    constructor(private http: Http) { }
+    constructor() { }
 
     //create authorization header
     // createAuthorizationHeader(headers: Headers, tokenString) {
