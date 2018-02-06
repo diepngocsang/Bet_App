@@ -17,6 +17,7 @@ import { PubSubProvider } from '../providers/pub-sub/pub-sub';
 import { BusinessProvider } from '../providers/business/business'
 import { ActiveBetPage } from '../pages/active-bet/active-bet';
 import { RankingPage } from '../pages/ranking/ranking';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // Define Variable
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
   count: number;
   isLogged: boolean;
   pages: Array<{ title: string, component: any, icon: string }>;
@@ -45,7 +46,7 @@ export class MyApp {
   ngOnInit() {
     // Define Component on Menu
     this.pages = [
-      { title: 'Home', component: HomePage, icon: 'ios-home' }
+      { title: 'Home', component: TabsPage, icon: 'ios-home' }
     ];
 
     this.isLogged = false;// isLogged is variable to defined Logged In or Not - Default value: False (Not Logged In)
@@ -69,25 +70,25 @@ export class MyApp {
   // Change item in Left Menu
   changeMenuItem() {
     // Define items to add into Left Menu
-   this.count = 0;
+    this.count = 0;
     let items = [
       { title: 'Active Bet', component: ActiveBetPage, icon: 'ios-football' },
       { title: 'Rankings', component: RankingPage, icon: 'ios-trophy' }
-    ];   
+    ];
     if (this.isLogged) {
-      for( var i = 0; i < this.pages.length; i++){
-        if(this.pages[i].title === 'Active Bet'){
+      for (var i = 0; i < this.pages.length; i++) {
+        if (this.pages[i].title === 'Active Bet') {
           this.count = 1;
           break;
         }
       }
-      if(this.count === 0){
+      if (this.count === 0) {
         items.forEach(item => {
           this.pages.push(item);
         });
       }
     } else {
-      for ( i = 0; i <= this.pages.length; i++) {
+      for (i = 0; i <= this.pages.length; i++) {
         if (this.pages[i].title === 'Active Bet') {
           this.pages.splice(i, 1);
         } else {

@@ -1,0 +1,107 @@
+page-table {
+    .card-ios {
+        border-radius: 15px;
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+    .card-ios .item-ios.item-block .item-inner {
+        padding: 0;
+    }
+    .label-ios {
+        margin: 0;
+    }
+    .toolbar-background {
+        background-color: transparent;
+    }
+    .toolbar-title {
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: Gill Sans, Verdana;
+    }
+    .item-ios-light,
+    .item-divider-ios-light {
+        font-size: 3.5vw;
+        font-family: Gill Sans, Verdana;
+    }
+    .group-item {
+        margin-top: 5vw;
+    }
+    .group-item:first-child {
+        margin-top: 0vw !important;
+    }
+    .item-ios {
+        padding: 0 10px !important;
+    }
+    .label-ios {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        .time {
+            font-family: Gill Sans, Verdana;
+            font-size: 4.5vw;
+        }
+        .team-vs {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            font-family: Gill Sans, Verdana;
+            font-size: 4.5vw;
+            align-items: center;
+            padding: 0 20px;
+            img {
+                width: 25px;
+                height: 20px;
+            }
+            .col-name {
+                div {
+                    width: 20vw;
+                    max-width: 20vw;
+                    text-transform: lowercase;
+                }
+                div::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .team-side {
+        background: url('../assets/images/bg/bg-team-side.jpg') no-repeat;
+        margin: 0;
+        padding: 0;
+    }
+    .team {
+        padding: 20px 20px 0 20px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .vs {
+            padding: 0 0.5em;
+            height: 26px;
+            font-size: 1.4rem;
+            width: 30%;
+            color: black;
+            border-radius: 20px;
+            background-color: #E0BB92;
+        }
+        img {
+            width: 70px;
+            height: 40px;
+        }
+    }
+    .schedule {
+        text-align: center;
+        padding-bottom: 10px;
+        color: white;
+    }
+    .btn-bet {
+        font-size: 2rem !important;
+    }
+}

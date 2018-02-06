@@ -17,6 +17,8 @@ import { ActiveBetPage } from '../pages/active-bet/active-bet';
 import { BetPage } from '../pages/bet/bet';
 import { HelpContent } from '../pages/bet/help-content';
 import { RankingPage } from '../pages/ranking/ranking';
+import { TabsPage } from '../pages/tabs/tabs';
+import { TablePage } from '../pages/table/table';
 
 // Import Services - Providers
 import { UserServiceProvider } from '../providers/user-service/user-service';
@@ -40,6 +42,8 @@ import { SpinnerProvider } from '../providers/spinner/spinner';
     ActiveBetPage,
     RankingPage,
     BetPage,
+    TabsPage,
+    TablePage,
     HelpContent
   ],
   imports: [
@@ -59,6 +63,8 @@ import { SpinnerProvider } from '../providers/spinner/spinner';
     ActiveBetPage,
     RankingPage,
     BetPage,
+    TabsPage,
+    TablePage,
     HelpContent
   ],
   providers: [
